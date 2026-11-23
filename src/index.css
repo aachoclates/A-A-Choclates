@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+:root {
+  --bg-cream: #FAF6F0;
+  --bg-beige: #F2EAE0;
+  --bg-card: #FFFFFF;
+  --bg-dark: #2A1812;
+  --text-dark: #2A1812;
+  --text-muted: #644E46;
+  --text-light: #FAF6F0;
+  --accent-gold: #B58938;
+  --accent-gold-hover: #9A7129;
+  --accent-berry: #8B3A42;
+  --accent-berry-hover: #732D34;
+  --border-subtle: rgba(181, 137, 56, 0.22);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 112px;
+    background-color: var(--bg-cream);
+    color: var(--text-dark);
+    font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  body {
+    background-color: var(--bg-cream);
+    color: var(--text-dark);
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .brand-font {
+    font-family: "Playfair Display", Georgia, serif;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+
+  h1, h2 {
+    text-wrap: balance;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+@layer components {
+  .btn-gold {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625rem;
+    border-radius: 9999px;
+    background-color: var(--accent-gold);
+    color: #FFFFFF;
+    border: 1px solid var(--accent-gold);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(181, 137, 56, 0.25);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+  }
+
+  .btn-gold:hover {
+    background-color: var(--accent-gold-hover);
+    border-color: var(--accent-gold-hover);
+    color: #FFFFFF;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(181, 137, 56, 0.35);
+  }
+
+  .btn-berry {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625rem;
+    border-radius: 9999px;
+    background-color: var(--accent-berry);
+    color: #FFFFFF;
+    border: 1px solid var(--accent-berry);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(139, 58, 66, 0.25);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+  }
+
+  .btn-berry:hover {
+    background-color: var(--accent-berry-hover);
+    border-color: var(--accent-berry-hover);
+    color: #FFFFFF;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(139, 58, 66, 0.35);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

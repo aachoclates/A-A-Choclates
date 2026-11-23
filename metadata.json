@@ -1,0 +1,8 @@
+{
+  "name": "A&A Choclates",
+  "description": "CRAFT WITH CARE — Artisanal homemade chocolate, customized name bars, Kunafa bakes, healthy dry-fruit confections, and luxury gifting hampers founded by Niquehat Khan in Bhopal, Madhya Pradesh.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

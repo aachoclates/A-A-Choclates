@@ -1,0 +1,1674 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A&amp;A Choclates — Craft with Care | Artisanal Confectionery Bhopal</title>
+  
+  <!-- Google Fonts & Font Awesome CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* ==========================================================================
+       CSS VARIABLES & WARM EDITORIAL CHOCOLATIER PALETTE
+       ========================================================================== */
+    :root {
+      --bg-cream: #FAF6F0;
+      --bg-beige: #F2EAE0;
+      --bg-card: #FFFFFF;
+      --bg-dark: #2A1812;
+      --text-dark: #2A1812;
+      --text-muted: #644E46;
+      --text-light: #FAF6F0;
+      --accent-gold: #B58938;
+      --accent-gold-hover: #9A7129;
+      --accent-gold-subtle: rgba(181, 137, 56, 0.2);
+      --accent-berry: #8B3A42;
+      --accent-berry-hover: #732D34;
+      --border-subtle: rgba(181, 137, 56, 0.22);
+      --font-heading: 'Playfair Display', Georgia, serif;
+      --font-body: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+      --header-height: 80px;
+
+      /* UI System */
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-pill: 50px;
+
+      --shadow-soft: 0 12px 35px rgba(42, 24, 18, 0.06);
+      --shadow-hover: 0 20px 45px rgba(42, 24, 18, 0.12);
+      --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* ==========================================================================
+       BASE & RESET
+       ========================================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 110px;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-cream);
+      color: var(--text-dark);
+      line-height: 1.8;
+      padding-top: 105px;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 0; /* Ensure bottom-right corner watermark is never clipped */
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition-smooth);
+    }
+
+    /* ==========================================================================
+       TYPOGRAPHY
+       ========================================================================== */
+    h1, h2 {
+      font-family: var(--font-heading) !important;
+      font-weight: 500;
+      line-height: 1.25;
+      color: var(--text-dark);
+      letter-spacing: -0.01em;
+    }
+
+    h3, h4, .brand-font {
+      font-family: var(--font-heading);
+      font-weight: 500;
+      line-height: 1.3;
+      color: var(--text-dark);
+    }
+
+    p, span, li, a, div {
+      font-family: var(--font-body);
+    }
+
+    .section-subtitle {
+      font-family: var(--font-body);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--accent-berry);
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 22px;
+      color: var(--text-dark);
+    }
+
+    @media (min-width: 768px) {
+      .section-title {
+        font-size: 3.1rem;
+      }
+    }
+
+    .section-desc {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 650px;
+      margin: 0 auto;
+      font-weight: 300;
+      line-height: 1.8;
+    }
+
+    /* ==========================================================================
+       BUTTONS
+       ========================================================================== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 32px;
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border-radius: var(--radius-pill);
+      background-color: var(--accent-gold);
+      color: var(--text-light);
+      border: 1px solid var(--accent-gold);
+      box-shadow: 0 4px 15px rgba(181, 137, 56, 0.25);
+      transition: var(--transition-smooth);
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .btn:hover {
+      background-color: var(--accent-gold-hover);
+      border-color: var(--accent-gold-hover);
+      color: #FFFFFF;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(181, 137, 56, 0.35);
+    }
+
+    .btn-gold {
+      background-color: var(--accent-gold);
+      color: var(--text-light);
+      border: 1px solid var(--accent-gold);
+    }
+
+    .btn-berry {
+      background-color: var(--accent-berry);
+      color: var(--text-light);
+      border: 1px solid var(--accent-berry);
+      box-shadow: 0 4px 15px rgba(139, 58, 66, 0.25);
+    }
+
+    .btn-berry:hover {
+      background-color: var(--accent-berry-hover);
+      border-color: var(--accent-berry-hover);
+      color: #FFFFFF;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(139, 58, 66, 0.35);
+    }
+
+    .btn-outline-gold {
+      background: transparent;
+      color: var(--accent-gold);
+      border: 1px solid var(--accent-gold);
+      box-shadow: none;
+    }
+
+    .btn-outline-gold:hover {
+      background: var(--accent-gold);
+      color: var(--text-light);
+      border-color: var(--accent-gold);
+    }
+
+    .btn-outline-dark {
+      background: transparent;
+      color: var(--text-dark);
+      border: 1px solid var(--text-dark);
+      box-shadow: none;
+    }
+
+    .btn-outline-dark:hover {
+      background: var(--text-dark);
+      color: var(--text-light);
+    }
+
+    /* ==========================================================================
+       HEADER & FLOATING NAVIGATION
+       ========================================================================== */
+    .header {
+      position: fixed;
+      top: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 40px);
+      max-width: 1280px;
+      height: 76px;
+      background-color: rgba(250, 246, 240, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      z-index: 300;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-pill);
+      display: flex;
+      align-items: center;
+      box-shadow: 0 8px 30px rgba(42, 24, 18, 0.08);
+      transition: var(--transition-smooth);
+    }
+
+    .nav-container {
+      width: 100%;
+      padding: 0 28px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-logo-link {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .header-logo-img {
+      width: 44px;
+      height: 44px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 1px solid var(--accent-gold);
+    }
+
+    .brand-name-header {
+      color: var(--text-dark);
+      font-size: 1.15rem;
+      letter-spacing: 1.5px;
+      font-weight: 600;
+    }
+
+    .brand-name-header span {
+      color: var(--accent-berry);
+      font-weight: 400;
+    }
+
+    .nav-links {
+      display: none;
+      list-style: none;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--text-dark);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      position: relative;
+      padding: 6px 0;
+      opacity: 0.85;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0%;
+      height: 2px;
+      background-color: var(--accent-berry);
+      transition: var(--transition-smooth);
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+      color: var(--accent-berry);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    @media (min-width: 992px) {
+      .nav-links {
+        display: flex;
+      }
+    }
+
+    @media (max-width: 991px) {
+      .header {
+        width: calc(100% - 24px);
+        top: 12px;
+        height: 70px;
+      }
+      .nav-container {
+        padding: 0 16px;
+      }
+    }
+
+    /* ==========================================================================
+       HERO SECTION
+       ========================================================================== */
+    .hero {
+      position: relative;
+      min-height: calc(100vh - 110px);
+      display: flex;
+      align-items: center;
+      padding: 100px 0;
+      background-color: var(--bg-cream);
+      color: var(--text-dark);
+      position: relative;
+    }
+
+    .hero-bg-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(250, 246, 240, 0.95) 0%, rgba(250, 246, 240, 0.82) 50%, rgba(242, 234, 224, 0.65) 100%);
+      z-index: 1;
+    }
+
+    .hero-bg-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    .hero-container {
+      position: relative;
+      z-index: 2;
+      width: 90%;
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    @media (min-width: 992px) {
+      .hero-container {
+        grid-template-columns: 1.15fr 0.85fr;
+      }
+    }
+
+    .hero-content {
+      max-width: 660px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 20px;
+      background-color: rgba(139, 58, 66, 0.08);
+      border: 1px solid rgba(139, 58, 66, 0.2);
+      border-radius: var(--radius-pill);
+      color: var(--accent-berry);
+      font-size: 0.75rem;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 28px;
+    }
+
+    .hero-title {
+      color: var(--text-dark);
+      font-size: 3rem;
+      margin-bottom: 24px;
+      line-height: 1.18;
+    }
+
+    .hero-title span {
+      color: var(--accent-berry);
+      font-style: italic;
+      display: block;
+      font-weight: 400;
+    }
+
+    .hero-description {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 42px;
+      font-weight: 300;
+      line-height: 1.8;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-logo-frame {
+      position: relative;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(181, 137, 56, 0.15) 0%, transparent 70%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      border-radius: 50%;
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-soft);
+    }
+
+    @media (min-width: 768px) {
+      .hero-title {
+        font-size: 3.8rem;
+      }
+      .hero-logo-frame {
+        width: 380px;
+        height: 380px;
+      }
+    }
+
+    .hero-main-logo {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      animation: float 8s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+
+    /* ==========================================================================
+       SIGNATURE CHOCOLATE COLLECTIONS
+       ========================================================================== */
+    .products-section {
+      padding: 130px 0;
+      background-color: var(--bg-beige);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .section-header-center {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 70px auto;
+    }
+
+    .products-grid {
+      width: 90%;
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 36px;
+    }
+
+    .product-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+      transition: var(--transition-smooth);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-card:hover {
+      border-color: var(--accent-gold);
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .product-img-wrapper {
+      position: relative;
+      height: 280px;
+      width: 100%;
+      background-color: var(--bg-cream);
+      /* Do NOT clip watermark */
+    }
+
+    .product-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 0;
+      transition: transform 0.6s ease;
+    }
+
+    .product-card:hover .product-img-wrapper img {
+      transform: scale(1.04);
+    }
+
+    .product-tag {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      background-color: rgba(250, 246, 240, 0.92);
+      backdrop-filter: blur(8px);
+      color: var(--accent-berry);
+      border: 1px solid rgba(139, 58, 66, 0.2);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: var(--radius-pill);
+      box-shadow: 0 4px 12px rgba(42, 24, 18, 0.08);
+    }
+
+    .product-info {
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .product-title {
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+      color: var(--text-dark);
+      font-weight: 500;
+    }
+
+    .product-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+      flex-grow: 1;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    .product-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 22px;
+    }
+
+    .product-edition {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--accent-gold);
+      font-weight: 600;
+    }
+
+    .collections-cta-wrap {
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    /* ==========================================================================
+       ABOUT & STORY SECTION
+       ========================================================================== */
+    .about-section {
+      padding: 130px 0;
+      background-color: var(--bg-cream);
+      position: relative;
+    }
+
+    .about-container {
+      width: 90%;
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    @media (min-width: 992px) {
+      .about-container {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .about-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      position: relative;
+    }
+
+    .about-img-box {
+      background: var(--bg-card);
+      padding: 10px;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-soft);
+      transition: var(--transition-smooth);
+    }
+
+    .about-img-box:hover {
+      border-color: var(--accent-gold);
+      transform: translateY(-4px);
+    }
+
+    .about-img-box img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 0;
+    }
+
+    .about-img-box:nth-child(2) {
+      margin-top: 36px;
+    }
+
+    .about-content {
+      padding-right: 10px;
+    }
+
+    .about-quote {
+      margin: 32px 0;
+      padding: 24px 28px;
+      border-left: 3px solid var(--accent-berry);
+      background-color: var(--bg-beige);
+      border-radius: var(--radius-sm);
+      font-family: var(--font-heading);
+      font-size: 1.18rem;
+      font-style: italic;
+      color: var(--text-dark);
+      line-height: 1.7;
+      border-top: 1px solid var(--border-subtle);
+      border-right: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-soft);
+    }
+
+    /* ==========================================================================
+       SPECIALTIES / EXTENDED CONFECTIONS
+       ========================================================================== */
+    .creations-section {
+      padding: 130px 0;
+      background-color: var(--bg-beige);
+      color: var(--text-dark);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .creations-container {
+      width: 90%;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .creations-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 28px;
+      margin-top: 50px;
+    }
+
+    .creation-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 40px 28px;
+      text-align: center;
+      transition: var(--transition-smooth);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .creation-card:hover {
+      border-color: var(--accent-gold);
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .creation-icon {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 20px auto;
+      border-radius: 50%;
+      border: 1px solid var(--accent-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-berry);
+      font-size: 1.3rem;
+      background-color: rgba(181, 137, 56, 0.1);
+    }
+
+    .creation-card h3 {
+      color: var(--text-dark);
+      font-size: 1.28rem;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+
+    .creation-card p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    /* ==========================================================================
+       CRAFT & QUALITY COMMITMENT
+       ========================================================================== */
+    .craft-section {
+      padding: 130px 0;
+      background-color: var(--bg-cream);
+    }
+
+    .craft-container {
+      width: 90%;
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    @media (min-width: 992px) {
+      .craft-container {
+        grid-template-columns: 0.95fr 1.05fr;
+      }
+    }
+
+    .craft-image-container {
+      position: relative;
+    }
+
+    .craft-main-img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      border: 1px solid var(--border-subtle);
+      border-radius: 0;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .craft-feature-list {
+      list-style: none;
+      margin-top: 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .craft-feature-item {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .craft-feature-icon {
+      background-color: var(--bg-beige);
+      color: var(--accent-berry);
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 1rem;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .craft-feature-text h4 {
+      font-size: 1.15rem;
+      margin-bottom: 4px;
+      color: var(--text-dark);
+    }
+
+    .craft-feature-text p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      font-weight: 300;
+    }
+
+    /* ==========================================================================
+       REVIEWS & TESTIMONIALS
+       ========================================================================== */
+    .reviews-section {
+      padding: 130px 0;
+      background-color: var(--bg-beige);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .reviews-grid {
+      width: 90%;
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 28px;
+    }
+
+    .review-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 36px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition-smooth);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .review-card:hover {
+      border-color: var(--accent-gold);
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .review-stars {
+      color: var(--accent-gold);
+      font-size: 0.85rem;
+      margin-bottom: 18px;
+      display: flex;
+      gap: 5px;
+    }
+
+    .review-quote {
+      font-family: var(--font-heading);
+      font-size: 1.02rem;
+      font-style: italic;
+      color: var(--text-dark);
+      line-height: 1.7;
+      margin-bottom: 22px;
+      flex-grow: 1;
+    }
+
+    .review-author {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--accent-berry);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .review-author::before {
+      content: '';
+      display: inline-block;
+      width: 18px;
+      height: 2px;
+      background-color: var(--accent-berry);
+    }
+
+    /* ==========================================================================
+       CONTACT & LOCATION
+       ========================================================================== */
+    .contact-section {
+      padding: 130px 0;
+      background-color: var(--bg-cream);
+    }
+
+    .contact-container {
+      width: 90%;
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    @media (min-width: 992px) {
+      .contact-container {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .contact-info-card {
+      background-color: var(--bg-card);
+      padding: 50px 40px;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .contact-details-list {
+      list-style: none;
+      margin: 36px 0 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .contact-detail-item {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .contact-detail-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background-color: var(--bg-beige);
+      color: var(--accent-berry);
+      border: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.05rem;
+      flex-shrink: 0;
+    }
+
+    .contact-detail-content h4 {
+      font-size: 1.05rem;
+      color: var(--text-dark);
+      margin-bottom: 4px;
+    }
+
+    .contact-detail-content p, .contact-detail-content a {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      font-weight: 300;
+    }
+
+    .contact-detail-content a:hover {
+      color: var(--accent-berry);
+    }
+
+    .order-cta-box {
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      padding: 50px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .order-cta-box h3 {
+      color: var(--text-light);
+      font-size: 2.2rem;
+      margin-bottom: 18px;
+    }
+
+    .order-cta-box p {
+      color: rgba(250, 246, 240, 0.8);
+      margin-bottom: 36px;
+      font-size: 1.02rem;
+      font-weight: 300;
+      line-height: 1.8;
+    }
+
+    /* ==========================================================================
+       FOOTER
+       ========================================================================== */
+    .footer {
+      background-color: var(--bg-dark);
+      color: rgba(250, 246, 240, 0.75);
+      padding: 80px 0 40px 0;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .footer-container {
+      width: 90%;
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 45px;
+      margin-bottom: 60px;
+    }
+
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .footer-logo img {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid var(--accent-gold);
+    }
+
+    .footer-logo h3 {
+      color: var(--text-light);
+      font-size: 1.25rem;
+      letter-spacing: 1.5px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 12px;
+      margin-top: 6px;
+    }
+
+    .social-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: rgba(250, 246, 240, 0.08);
+      border: 1px solid rgba(250, 246, 240, 0.15);
+      color: var(--accent-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      transition: var(--transition-smooth);
+    }
+
+    .social-icon:hover {
+      background-color: var(--accent-gold);
+      color: var(--bg-dark);
+      transform: translateY(-2px);
+    }
+
+    .footer-heading {
+      color: var(--text-light);
+      font-size: 1.05rem;
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    .footer-heading::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 28px;
+      height: 2px;
+      background-color: var(--accent-gold);
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-links a {
+      font-size: 0.9rem;
+      color: rgba(250, 246, 240, 0.75);
+      font-weight: 300;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent-gold);
+      padding-left: 4px;
+    }
+
+    .footer-bottom {
+      width: 90%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding-top: 30px;
+      border-top: 1px solid rgba(250, 246, 240, 0.12);
+      text-align: center;
+      font-size: 0.85rem;
+      color: rgba(250, 246, 240, 0.6);
+      font-weight: 300;
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       HEADER & NAVIGATION
+       ========================================================================== -->
+  <header class="header">
+    <div class="nav-container">
+      <a href="#hero" class="brand-logo-link">
+        <img src="https://labs.google.com/pomelli_downloads/websites/88h9UQcIv9Q78CQsyiD4ph/resources/8m1Opw9fw4l9mEPMzIU_MJ?authuser=0" alt="A&amp;A Choclates Logo" class="header-logo-img">
+        <span class="brand-font brand-name-header">A&amp;A <span>Choclates</span></span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#collection">Collections</a></li>
+        <li><a href="#story">Our Story</a></li>
+        <li><a href="#creations">Specialties</a></li>
+        <li><a href="#craft">Craftsmanship</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="header-actions">
+        <a href="https://aachoclates.me" target="_blank" class="btn btn-gold" style="padding: 10px 22px; font-size: 0.72rem;">
+          Shop Online
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       HERO SECTION
+       ========================================================================== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-overlay"></div>
+    <div class="hero-bg-image" data-alt="Artisanal handcrafted chocolate confections arranged on a clean warm cream linen tablecloth bathed in gentle natural morning daylight. Soft warm beige and cocoa tones, delicate shadows, dried botanicals and whole roasted almonds nearby. High-end natural editorial food photography, clean and refined, no text, signage, or lettering." style="background-image: url('https://labs.google.com/pomelli_downloads/websites/88h9UQcIv9Q78CQsyiD4ph/resources/9QwAcs3Uw3EfMR_lARhOfo?authuser=0'); background-size: cover; background-position: center;"></div>
+    
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <i class="fa-solid fa-seedling"></i> Craft with Care
+        </div>
+        <h1 class="hero-title">
+          Handcrafted Confections &amp; <span>Healthy Dry-Fruit Treats</span>
+        </h1>
+        <p class="hero-description">
+          Discover customized name chocolates, floral and dry-fruit discs, Kunafa bakes, stuffed dates, and curated luxury gift hampers. Handcrafted in small batches with whole intent and 100% natural, clean ingredients in Bhopal.
+        </p>
+        <div class="hero-buttons">
+          <a href="https://aachoclates.me" target="_blank" class="btn btn-gold">
+            Shop Online
+          </a>
+          <a href="https://www.instagram.com/aachoclates.me?stkn=MXI1N2ZsY2lwMWhu" target="_blank" class="btn btn-berry">
+            Order via Instagram
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-logo-frame">
+          <img src="https://labs.google.com/pomelli_downloads/websites/88h9UQcIv9Q78CQsyiD4ph/resources/8m1Opw9fw4l9mEPMzIU_MJ?authuser=0" alt="A&amp;A Choclates emblem featuring Craft with Care slogan" class="hero-main-logo">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SIGNATURE CHOCOLATE COLLECTIONS
+       ========================================================================== -->
+  <section class="products-section" id="collection">
+    <div class="section-header-center">
+      <span class="section-subtitle">Artisanal Offerings</span>
+      <h2 class="section-title">Signature Confectionery</h2>
+      <p class="section-desc">Explore our custom personalization options, healthy dry-fruit creations, Kunafa bakes, and curated gift boxes designed for unforgettable moments.</p>
+    </div>
+
+    <div class="products-grid">
+      <!-- Product Card 1 -->
+      <div class="product-card">
+        <div class="product-img-wrapper">
+          <img src="https://labs.google.com/pomelli_downloads/websites/88h9UQcIv9Q78CQsyiD4ph/resources/9nGYj6325Fm9PgbXPKDke-?authuser=0" alt="Custom Cake and Chocolate Personalization">
+          <span class="product-tag">Bespoke Order</span>
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">Custom Cake and Chocolate Personalization</h3>
+          <p class="product-desc">Personalized cake and chocolate crafting services tailored to order, including custom cakes and name-engraved chocolates.</p>
+          <div class="product-footer">
+            <span class="product-edition">Personalized</span>
+            <a href="https://www.instagram.com/aachoclates.me?stkn=MXI1N2ZsY2lwMWhu" target="_blank" class="btn btn-gold" style="padding: 10px 20px; font-size: 0.72rem;">
+              Book Appointment
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Card 2 -->
+      <div class="product-card">
+        <div class="product-img-wrapper">
+          <img src="https://labs.google.com/pomelli_downloads/websites/88h9UQcIv9Q78CQsyiD4ph/resources/aPghvS_6CfAf02MPz3-O1F?authuser=0" alt="Custom Gift Hamper Creation">
+          <span class="product-tag">Festive &amp; Gifting</span>
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">Custom Gift Hamper Creation</h3>
+          <p class="product-desc">Bespoke design and assembly of artisanal chocolate gift hampers for festivals, holidays, and special occasions.</p>
+          <div class="product-footer">
+            <span class="product-edition">Curated Set</span>
+            <a href="https://www.instagram.com/aachoclates.me?stkn=MXI1N2ZsY2lwMWhu" target="_blank" class="btn btn-gold" style="padding: 10px 20px; font-size: 0.72rem;">
+              Order Hamper
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Card 3 -->
+      <div class="product-card">
+        <div class="product-img-wrapper">
+          <img src="https://labs.google.com/pomelli_downloads/websites/88h9UQcIv9Q78CQsyiD4ph/resources/a8JU76D9mMac_zxYylp4R0?authuser=0" alt="Floral &amp; Dry-Fruit Discs">
+          <span class="product-tag">Healthy Luxury</span>
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">Floral &amp; Dry-Fruit Discs</h3>
+          <p class="product-desc">Decadent artisan cocoa discs studded with slow-roasted almonds, pistachios, edible petals, and natural ingredients.</p>
+          <div class="product-footer">
+            <span class="product-edition">Nutrient Rich</span>
+            <a href="https://aachoclates.me" target="_blank" class="btn btn-gold" style="padding: 10px 20px; font-size: 0.72rem;">
+              Shop Online
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Card 4 -->
+      <div class="product-card">
+        <div class="product-img-wrapper">
+          <img src="https://labs.google.com/pomelli_downloads/websites/88h9UQcIv9Q78CQsyiD4ph/resources/8mZGZaiLt655T4XN8qD_Nv?authuser=0" alt="Gold-Pearl Truffle Squares">
+          <span class="product-tag">Festive Special</span>
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">Gold-Pearl Truffle Squares</h3>
+          <p class="product-desc">Silk-smooth cocoa truffles and foil-wrapped pralines finished with edible gold pearls and rich molten cocoa filling.</p>
+          <div class="product-footer">
+            <span class="product-edition">Celebration Set</span>
+            <a href="https://aachoclates.me" target="_blank" class="btn btn-gold" style="padding: 10px 20px; font-size: 0.72rem;">
+              Shop Online
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Card 5 -->
+      <div class="product-card">
+        <div class="product-img-wrapper">
+          <img src="https://labs.google.com/pomelli_downloads/websites/88h9UQcIv9Q78CQsyiD4ph/resources/9ELg7gwqU2C9zLaw3Us_Gd?authuser=0" alt="Kunafa Bakes &amp; Loaves">
+          <span class="product-tag">Artisanal Bake</span>
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">Kunafa Bakes &amp; Loaf Cakes</h3>
+          <p class="product-desc">Golden baked Kunafa specialties and homemade chocolate loaf cakes baked fresh with premium nuts and cocoa.</p>
+          <div class="product-footer">
+            <span class="product-edition">Fresh Oven</span>
+            <a href="https://aachoclates.me" target="_blank" class="btn btn-gold" style="padding: 10px 20px; font-size: 0.72rem;">
+              Shop Online
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Card 6 -->
+      <div class="product-card">
+        <div class="product-img-wrapper">
+          <img src="https://labs.google.com/pomelli_downloads/websites/88h9UQcIv9Q78CQsyiD4ph/resources/8aBIFLlfVNDcKc5zb5FkBM?authuser=0" alt="8g Protein Choco Laddus">
+          <span class="product-tag">Nutritional</span>
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">8g Protein Choco Laddus</h3>
+          <p class="product-desc">Wholesome high-protein cocoa treats packed with dry-fruits and energy bar sticks for mindful everyday snacking.</p>
+          <div class="product-footer">
+            <span class="product-edition">Healthy Power</span>
+            <a href="https://aachoclates.me" target="_blank" class="btn btn-gold" style="padding: 10px 20px; font-size: 0.72rem;">
+              Shop Online
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="collections-cta-wrap">
+      <a href="https://aachoclates.me" target="_blank" class="btn btn-berry">
+        Explore Full Online Store
+      </a>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       OUR STORY & PHILOSOPHY
+       ========================================================================== -->
+  <section class="about-section" id="story">
+    <div class="about-container">
+      <div class="about-gallery">
+        <div class="about-img-box">
+          <img src="https://labs.google.com/pomelli_downloads/websites/88h9UQcIv9Q78CQsyiD4ph/resources/bxXKCs-MivX1k1qnaZMOmu?authuser=0" alt="Handcrafted dark chocolate slabs with whole nuts">
+        </div>
+        <div class="about-img-box">
+          <img src="https://labs.google.com/pomelli_downloads/websites/88h9UQcIv9Q78CQsyiD4ph/resources/aetJS1JGsB72ERfDTKs_gy?authuser=0" alt="Curated selection of personalized chocolates and gift treats">
+        </div>
+      </div>
+
+      <div class="about-content">
+        <span class="section-subtitle">Homemade Excellence</span>
+        <h2 class="section-title">Wholesome Purity in Every Bite</h2>
+        <p>
+          A&amp;A Choclates is an artisanal homemade chocolate and healthy dry-fruit confectionery brand rooted in Bhopal, Madhya Pradesh. We craft pure confections with natural ingredients, clean energy, and whole intent.
+        </p>
+        <div class="about-quote">
+          "CRAFT WITH CARE — Every piece is created by hand to celebrate life's moments with pure cocoa, wholesome nuts, and uncompromised quality."
+        </div>
+        <p>
+          From hot chocolate stirrer spoons and stuffed dates to custom name-engraved chocolates and 8g protein choco laddus, our studio blends tradition, health, and gourmet luxury.
+        </p>
+        <div style="margin-top: 36px;">
+          <a href="https://www.instagram.com/aachoclates.me" target="_blank" class="btn btn-berry">
+            <i class="fa-brands fa-instagram"></i> Follow @aachoclates.me
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SPECIALTIES & CREATIONS
+       ========================================================================== -->
+  <section class="creations-section" id="creations">
+    <div class="creations-container">
+      <div class="section-header-center">
+        <span class="section-subtitle">Our Specialties</span>
+        <h2 class="section-title">Artisanal Confectionery Highlights</h2>
+        <p class="section-desc">
+          Crafted in small batches using premium dry fruits, natural cocoa butter, and clean homemade ingredients.
+        </p>
+      </div>
+
+      <div class="creations-grid">
+        <div class="creation-card">
+          <div class="creation-icon"><i class="fa-solid fa-signature"></i></div>
+          <h3>Customized Name Chocolates</h3>
+          <p>Name-engraved dark and milk chocolate bars tailored for birthdays, anniversaries, and corporate gifts.</p>
+        </div>
+
+        <div class="creation-card">
+          <div class="creation-icon"><i class="fa-solid fa-stroopwafel"></i></div>
+          <h3>Kunafa Bakes</h3>
+          <p>Crisp, golden Kunafa pastry bakes layered with sweet cream and rich artisanal chocolate coating.</p>
+        </div>
+
+        <div class="creation-card">
+          <div class="creation-icon"><i class="fa-solid fa-mug-hot"></i></div>
+          <h3>Hot Chocolate Stirrer Spoons</h3>
+          <p>Decadent chocolate-dipped spoons designed to melt effortlessly into warm milk for an instant gourmet drink.</p>
+        </div>
+
+        <div class="creation-card">
+          <div class="creation-icon"><i class="fa-solid fa-dumbbell"></i></div>
+          <h3>Protein Choco Laddus &amp; Bars</h3>
+          <p>8g protein laddus and energy bar sticks packed with wholesome roasted nuts, seeds, and clean cocoa.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CRAFTSMANSHIP & STANDARDS
+       ========================================================================== -->
+  <section class="craft-section" id="craft">
+    <div class="craft-container">
+      <div class="craft-image-container">
+        <img src="https://labs.google.com/pomelli_downloads/websites/88h9UQcIv9Q78CQsyiD4ph/resources/bLPCqgX81mN2ewxJ7uG_fL?authuser=0" alt="Handcrafted chocolate creation process" class="craft-main-img" data-alt="Artisanal chocolatier hands delicately placing roasted almonds and edible dried rose petals onto smooth handcrafted chocolate discs on a warm cream marble surface. Soft natural daylight streaming in from a side window, gentle highlights and warm beige tones. Authentic editorial food craftsmanship photography, focus on texture and purity, no text, signage, or lettering.">
+      </div>
+
+      <div>
+        <span class="section-subtitle">Purity &amp; Quality</span>
+        <h2 class="section-title">The Art of Pure Cocoa</h2>
+        <p style="color: var(--text-muted); font-size: 1.05rem; font-weight: 300; line-height: 1.8;">
+          At A&amp;A Choclates, we believe in healthy, homemade goodness. Each confection is prepared with meticulous attention to detail without artificial preservatives or shortcuts.
+        </p>
+
+        <ul class="craft-feature-list">
+          <li class="craft-feature-item">
+            <div class="craft-feature-icon"><i class="fa-solid fa-leaf"></i></div>
+            <div class="craft-feature-text">
+              <h4>100% Natural &amp; Clean</h4>
+              <p>Pure cocoa butter, premium dry-fruits, and natural sweeteners crafted for wholesome indulgence.</p>
+            </div>
+          </li>
+
+          <li class="craft-feature-item">
+            <div class="craft-feature-icon"><i class="fa-solid fa-heart"></i></div>
+            <div class="craft-feature-text">
+              <h4>Homemade Small Batches</h4>
+              <p>Hand-poured and freshly prepared to ensure optimal freshness and authentic homemade flavor.</p>
+            </div>
+          </li>
+
+          <li class="craft-feature-item">
+            <div class="craft-feature-icon"><i class="fa-solid fa-gift"></i></div>
+            <div class="craft-feature-text">
+              <h4>Artisanal Presentation</h4>
+              <p>Elegantly packaged in custom hampers and boxes perfect for memorable gifting experiences.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CUSTOMER REVIEWS
+       ========================================================================== -->
+  <section class="reviews-section" id="reviews">
+    <div class="section-header-center">
+      <span class="section-subtitle">Patron Testimonials</span>
+      <h2 class="section-title">Words from Our Patrons</h2>
+      <p class="section-desc">Discover what chocolate connoisseurs and clients say about our handcrafted confections and luxury hampers.</p>
+    </div>
+
+    <div class="reviews-grid">
+      <!-- Review 1 -->
+      <div class="review-card">
+        <div>
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-quote">
+            "The artisanal nutty slabs are incredible. The dark chocolate is perfectly balanced—rich, smooth, and not overly sweet. You can instantly taste the pure, small-batch quality in every bite."
+          </p>
+        </div>
+        <div class="review-author">Ajeet Soni</div>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="review-card">
+        <div>
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-quote">
+            "Ordered the Assorted Grand Reserve Box for a family celebration. The packaging is absolutely premium, and the ruby heart pralines were a massive hit. It feels like a true luxury gifting experience right here in Bhopal."
+          </p>
+        </div>
+        <div class="review-author">Teena Khan</div>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="review-card">
+        <div>
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-quote">
+            "A&amp;A Chocolate completely elevated our anniversary. Their bespoke cake and handcrafted chocolates are visually stunning and taste even better. The craftsmanship is unmatched."
+          </p>
+        </div>
+        <div class="review-author">Muskan Khan</div>
+      </div>
+
+      <!-- Review 4 -->
+      <div class="review-card">
+        <div>
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-quote">
+            "It is rare to find chocolates made with such clean, pristine ingredients. The slow-roasted nuts and pure cocoa butter make all the difference. My absolute go-to for artisanal sweets."
+          </p>
+        </div>
+        <div class="review-author">Shabnam Bee</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CONTACT & LOCATION SECTION
+       ========================================================================== -->
+  <section class="contact-section" id="contact">
+    <div class="contact-container">
+      <div class="contact-info-card">
+        <span class="section-subtitle">Atelier Location</span>
+        <h2 class="section-title" style="font-size: 2.3rem;">Get in Touch</h2>
+        <p style="color: var(--text-muted); font-weight: 300;">Inquire for bespoke gift hampers, personalized name chocolates, wedding favors, or custom orders in Bhopal.</p>
+
+        <ul class="contact-details-list">
+          <li class="contact-detail-item">
+            <div class="contact-detail-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div class="contact-detail-content">
+              <h4>Atelier Address</h4>
+              <p>MIG A-124, P&amp;T Road, Near Shradhdha Library, Nehru Nagar, near Sharda Vidya Mandir School, Kotra Sultanabad, Bhopal, Madhya Pradesh, 462003, IN</p>
+            </div>
+          </li>
+
+          <li class="contact-detail-item">
+            <div class="contact-detail-icon"><i class="fa-solid fa-phone"></i></div>
+            <div class="contact-detail-content">
+              <h4>Direct Line</h4>
+              <p><a href="tel:+917697568715" target="_blank">+91 76975 68715</a></p>
+            </div>
+          </li>
+
+          <li class="contact-detail-item">
+            <div class="contact-detail-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div class="contact-detail-content">
+              <h4>Email Inquiry</h4>
+              <p><a href="mailto:aachoclates@gmail.com" target="_blank">aachoclates@gmail.com</a></p>
+            </div>
+          </li>
+
+          <li class="contact-detail-item">
+            <div class="contact-detail-icon"><i class="fa-brands fa-instagram"></i></div>
+            <div class="contact-detail-content">
+              <h4>Instagram Studio</h4>
+              <p><a href="https://www.instagram.com/aachoclates.me" target="_blank">@aachoclates.me</a></p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="order-cta-box" data-alt="Warm editorial scene featuring an elegant ceramic tray filled with handcrafted chocolate truffles and stuffed dates on a soft linen tablecloth. Soft natural daylight creating gentle shadows and warm organic highlights. Rich warm cocoa, soft cream, and gold accents. No text, signage, or lettering." style="background-image: linear-gradient(to bottom, rgba(42,24,18,0.88), rgba(42,24,18,0.94)), url('https://labs.google.com/pomelli_downloads/websites/88h9UQcIv9Q78CQsyiD4ph/resources/8LvnVnxOp9S1m_ub5yTO8m?authuser=0'); background-size: cover; background-position: center;">
+        <span style="color: var(--accent-gold); font-weight: 500; letter-spacing: 3px; text-transform: uppercase; font-size: 0.75rem; margin-bottom: 14px;">Direct Ordering</span>
+        <h3>Order Your Custom Treats Today</h3>
+        <p>Explore our online storefront or connect with us directly on Instagram to reserve your custom gift hampers and artisanal treats.</p>
+        
+        <div style="display: flex; flex-direction: column; gap: 14px; width: 100%;">
+          <a href="https://aachoclates.me" target="_blank" class="btn btn-gold" style="width: 100%;">
+            Shop Online Now
+          </a>
+          <a href="https://www.instagram.com/aachoclates.me?stkn=MXI1N2ZsY2lwMWhu" target="_blank" class="btn btn-berry" style="width: 100%;">
+            Order via Instagram
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="https://labs.google.com/pomelli_downloads/websites/88h9UQcIv9Q78CQsyiD4ph/resources/8m1Opw9fw4l9mEPMzIU_MJ?authuser=0" alt="A&amp;A Choclates Logo">
+          <h3 class="brand-font">A&amp;A Choclates</h3>
+        </div>
+        <p style="font-size: 0.9rem; color: rgba(250, 246, 240, 0.75); font-weight: 300;">
+          CRAFT WITH CARE — Artisanal homemade chocolate and healthy dry-fruit confectionery crafted in Bhopal, Madhya Pradesh.
+        </p>
+        <div class="social-links">
+          <a href="https://www.instagram.com/aachoclates.me" target="_blank" class="social-icon" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="#collection">Collections</a></li>
+          <li><a href="#story">Our Story</a></li>
+          <li><a href="#creations">Specialties</a></li>
+          <li><a href="#craft">Craftsmanship</a></li>
+          <li><a href="#reviews">Customer Reviews</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Ordering &amp; Shop</h4>
+        <ul class="footer-links">
+          <li><a href="https://aachoclates.me" target="_blank">Shop Online Store</a></li>
+          <li><a href="https://www.instagram.com/aachoclates.me?stkn=MXI1N2ZsY2lwMWhu" target="_blank">Book Appointment</a></li>
+          <li><a href="https://www.instagram.com/aachoclates.me?stkn=MXI1N2ZsY2lwMWhu" target="_blank">Custom Gift Hampers</a></li>
+          <li><a href="https://www.instagram.com/aachoclates.me" target="_blank">Instagram Storefront</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Atelier Contact</h4>
+        <p style="font-size: 0.88rem; line-height: 1.7; color: rgba(250, 246, 240, 0.75); font-weight: 300;">
+          MIG A-124, P&amp;T Road, Near Shradhdha Library, Nehru Nagar, near Sharda Vidya Mandir School, Kotra Sultanabad, Bhopal, Madhya Pradesh, 462003, IN<br><br>
+          <strong style="color: var(--text-light); font-weight: 400;">Email:</strong> aachoclates@gmail.com<br>
+          <strong style="color: var(--text-light); font-weight: 400;">Phone:</strong> +91 76975 68715
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© A&amp;A Choclates. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+<div style="text-align:right;padding:16px"><a href="https://support.google.com/legal/answer/3110420" target="_blank" style="color:inherit;text-decoration:none;font-size:12px">Report legal issue</a></div><style>
+body { position: relative; }
+div.ai-image-badge {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2225%22%20height%3D%2225%22%20viewBox%3D%220%200%2025%2025%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cg%3E%0A%3Cmask%20id%3D%22path-2-inside-1_4816_19485%22%20fill%3D%22white%22%3E%0A%3Cpath%20d%3D%22M17.9651%2010.7604L16.8609%208.36458L14.4651%207.28125L16.8609%206.17708L17.9651%203.78125L19.0484%206.17708L21.4442%207.28125L19.0484%208.36458L17.9651%2010.7604ZM17.9651%2021.7604L16.8817%2019.3437L14.4651%2018.2604L16.8817%2017.1771L17.9651%2014.7604L19.0484%2017.1771L21.4651%2018.2604L19.0484%2019.3437L17.9651%2021.7604ZM10.9651%2019.2604L8.94423%2014.7812L4.46506%2012.7604L8.94423%2010.7396L10.9651%206.26042L12.9859%2010.7396L17.4651%2012.7604L12.9859%2014.7812L10.9651%2019.2604Z%22%2F%3E%0A%3C%2Fmask%3E%0A%3Cpath%20d%3D%22M17.9651%2010.7604L16.8609%208.36458L14.4651%207.28125L16.8609%206.17708L17.9651%203.78125L19.0484%206.17708L21.4442%207.28125L19.0484%208.36458L17.9651%2010.7604ZM17.9651%2021.7604L16.8817%2019.3437L14.4651%2018.2604L16.8817%2017.1771L17.9651%2014.7604L19.0484%2017.1771L21.4651%2018.2604L19.0484%2019.3437L17.9651%2021.7604ZM10.9651%2019.2604L8.94423%2014.7812L4.46506%2012.7604L8.94423%2010.7396L10.9651%206.26042L12.9859%2010.7396L17.4651%2012.7604L12.9859%2014.7812L10.9651%2019.2604Z%22%20fill%3D%22white%22%2F%3E%0A%3Cpath%20d%3D%22M17.9651%2010.7604L17.511%2010.9697L17.9694%2011.9644L18.4206%2010.9664L17.9651%2010.7604ZM16.8609%208.36458L17.315%208.1553L17.2369%207.98586L17.0669%207.90899L16.8609%208.36458ZM14.4651%207.28125L14.2558%206.82715L13.2611%207.28558L14.2591%207.73684L14.4651%207.28125ZM16.8609%206.17708L17.0702%206.63118L17.2378%206.55394L17.315%206.38636L16.8609%206.17708ZM17.9651%203.78125L18.4206%203.57524L17.9694%202.57727L17.511%203.57197L17.9651%203.78125ZM19.0484%206.17708L18.5928%206.38309L18.6697%206.55309L18.8391%206.63118L19.0484%206.17708ZM21.4442%207.28125L21.6502%207.73684L22.6482%207.28558L21.6535%206.82715L21.4442%207.28125ZM19.0484%208.36458L18.8424%207.90899L18.6705%207.98671L18.5928%208.15858L19.0484%208.36458ZM17.9651%2021.7604L17.5088%2021.9649L17.9651%2022.9827L18.4213%2021.9649L17.9651%2021.7604ZM16.8817%2019.3438L17.338%2019.1392L17.2601%2018.9654L17.0863%2018.8875L16.8817%2019.3438ZM14.4651%2018.2604L14.2605%2017.8042L13.2427%2018.2604L14.2605%2018.7167L14.4651%2018.2604ZM16.8817%2017.1771L17.0863%2017.6333L17.2601%2017.5554L17.338%2017.3816L16.8817%2017.1771ZM17.9651%2014.7604L18.4213%2014.5559L17.9651%2013.5381L17.5088%2014.5559L17.9651%2014.7604ZM19.0484%2017.1771L18.5921%2017.3816L18.6701%2017.5554L18.8439%2017.6333L19.0484%2017.1771ZM21.4651%2018.2604L21.6696%2018.7167L22.6874%2018.2604L21.6696%2017.8042L21.4651%2018.2604ZM19.0484%2019.3438L18.8439%2018.8875L18.6701%2018.9654L18.5921%2019.1392L19.0484%2019.3438ZM10.9651%2019.2604L10.5093%2019.466L10.9651%2020.4762L11.4208%2019.466L10.9651%2019.2604ZM8.94423%2014.7812L9.39999%2014.5756L9.32222%2014.4033L9.14985%2014.3255L8.94423%2014.7812ZM4.46506%2012.7604L4.25944%2012.3047L3.24924%2012.7604L4.25944%2013.2162L4.46506%2012.7604ZM8.94423%2010.7396L9.14985%2011.1953L9.32222%2011.1176L9.39999%2010.9452L8.94423%2010.7396ZM10.9651%206.26042L11.4208%206.05479L10.9651%205.0446L10.5093%206.05479L10.9651%206.26042ZM12.9859%2010.7396L12.5301%2010.9452L12.6079%2011.1176L12.7803%2011.1953L12.9859%2010.7396ZM17.4651%2012.7604L17.6707%2013.2162L18.6809%2012.7604L17.6707%2012.3047L17.4651%2012.7604ZM12.9859%2014.7812L12.7803%2014.3255L12.6079%2014.4033L12.5301%2014.5756L12.9859%2014.7812ZM17.9651%2010.7604L18.4192%2010.5511L17.315%208.1553L16.8609%208.36458L16.4068%208.57386L17.511%2010.9697L17.9651%2010.7604ZM16.8609%208.36458L17.0669%207.90899L14.6711%206.82566L14.4651%207.28125L14.2591%207.73684L16.6549%208.82017L16.8609%208.36458ZM14.4651%207.28125L14.6743%207.73534L17.0702%206.63118L16.8609%206.17708L16.6516%205.72299L14.2558%206.82715L14.4651%207.28125ZM16.8609%206.17708L17.315%206.38636L18.4192%203.99053L17.9651%203.78125L17.511%203.57197L16.4068%205.9678L16.8609%206.17708ZM17.9651%203.78125L17.5095%203.98726L18.5928%206.38309L19.0484%206.17708L19.504%205.97108L18.4206%203.57524L17.9651%203.78125ZM19.0484%206.17708L18.8391%206.63118L21.2349%207.73534L21.4442%207.28125L21.6535%206.82715L19.2577%205.72299L19.0484%206.17708ZM21.4442%207.28125L21.2382%206.82566L18.8424%207.90899L19.0484%208.36458L19.2544%208.82017L21.6502%207.73684L21.4442%207.28125ZM19.0484%208.36458L18.5928%208.15858L17.5095%2010.5544L17.9651%2010.7604L18.4206%2010.9664L19.504%208.57059L19.0484%208.36458ZM17.9651%2021.7604L18.4213%2021.5559L17.338%2019.1392L16.8817%2019.3438L16.4255%2019.5483L17.5088%2021.9649L17.9651%2021.7604ZM16.8817%2019.3438L17.0863%2018.8875L14.6696%2017.8042L14.4651%2018.2604L14.2605%2018.7167L16.6772%2019.8L16.8817%2019.3438ZM14.4651%2018.2604L14.6696%2018.7167L17.0863%2017.6333L16.8817%2017.1771L16.6772%2016.7208L14.2605%2017.8042L14.4651%2018.2604ZM16.8817%2017.1771L17.338%2017.3816L18.4213%2014.9649L17.9651%2014.7604L17.5088%2014.5559L16.4255%2016.9726L16.8817%2017.1771ZM17.9651%2014.7604L17.5088%2014.9649L18.5921%2017.3816L19.0484%2017.1771L19.5046%2016.9726L18.4213%2014.5559L17.9651%2014.7604ZM19.0484%2017.1771L18.8439%2017.6333L21.2605%2018.7167L21.4651%2018.2604L21.6696%2017.8042L19.2529%2016.7208L19.0484%2017.1771ZM21.4651%2018.2604L21.2605%2017.8042L18.8439%2018.8875L19.0484%2019.3438L19.2529%2019.8L21.6696%2018.7167L21.4651%2018.2604ZM19.0484%2019.3438L18.5921%2019.1392L17.5088%2021.5559L17.9651%2021.7604L18.4213%2021.9649L19.5046%2019.5483L19.0484%2019.3438ZM10.9651%2019.2604L11.4208%2019.0548L9.39999%2014.5756L8.94423%2014.7812L8.48846%2014.9869L10.5093%2019.466L10.9651%2019.2604ZM8.94423%2014.7812L9.14985%2014.3255L4.67068%2012.3047L4.46506%2012.7604L4.25944%2013.2162L8.7386%2015.237L8.94423%2014.7812ZM4.46506%2012.7604L4.67068%2013.2162L9.14985%2011.1953L8.94423%2010.7396L8.7386%2010.2838L4.25944%2012.3047L4.46506%2012.7604ZM8.94423%2010.7396L9.39999%2010.9452L11.4208%206.46604L10.9651%206.26042L10.5093%206.05479L8.48846%2010.534L8.94423%2010.7396ZM10.9651%206.26042L10.5093%206.46604L12.5301%2010.9452L12.9859%2010.7396L13.4417%2010.534L11.4208%206.05479L10.9651%206.26042ZM12.9859%2010.7396L12.7803%2011.1953L17.2594%2013.2162L17.4651%2012.7604L17.6707%2012.3047L13.1915%2010.2838L12.9859%2010.7396ZM17.4651%2012.7604L17.2594%2012.3047L12.7803%2014.3255L12.9859%2014.7812L13.1915%2015.237L17.6707%2013.2162L17.4651%2012.7604ZM12.9859%2014.7812L12.5301%2014.5756L10.5093%2019.0548L10.9651%2019.2604L11.4208%2019.466L13.4417%2014.9869L12.9859%2014.7812Z%22%20fill%3D%22%23DDDDDD%22%20mask%3D%22url(%23path-2-inside-1_4816_19485)%22%2F%3E%0A%3C%2Fg%3E%0A%3Cdefs%3E%0A%3C%2Fdefs%3E%0A%3C%2Fsvg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 200;
+}
+</style><script>
+(function() {
+  var selector = "img[src*=\"8LvnVnxOp9S1m_ub5yTO8m\"],[style*=\"8LvnVnxOp9S1m_ub5yTO8m\"],img[src*=\"9QwAcs3Uw3EfMR_lARhOfo\"],[style*=\"9QwAcs3Uw3EfMR_lARhOfo\"],img[src*=\"bLPCqgX81mN2ewxJ7uG_fL\"],[style*=\"bLPCqgX81mN2ewxJ7uG_fL\"]";
+  if (!selector) return;
+  const targets = document.querySelectorAll(selector);
+  if (!targets.length) return;
+
+  const pairs = [];
+  targets.forEach(function(target) {
+    const badge = document.createElement('div');
+    badge.className = 'ai-image-badge';
+    document.body.appendChild(badge);
+    pairs.push({ target: target, badge: badge });
+  });
+
+  function position() {
+    const bodyRect = document.body.getBoundingClientRect();
+    const bodyTop = bodyRect.top + document.body.clientTop;
+    const bodyLeft = bodyRect.left + document.body.clientLeft;
+    pairs.forEach(function({target, badge}) {
+      const rect = target.getBoundingClientRect();
+      badge.style.top = (rect.bottom - bodyTop - 25 - 8) + 'px';
+      badge.style.left = (rect.right - bodyLeft - 25 - 8) + 'px';
+    });
+  }
+
+  new ResizeObserver(position).observe(document.body);
+  position();
+})();
+</script><div class="ai-image-badge" style="top: 1207.22px; left: 846.273px;"></div><div class="ai-image-badge" style="top: 6554.82px; left: 802.307px;"></div><div class="ai-image-badge" style="top: 9521.34px; left: 802.307px;"></div>
+</body></html>
