@@ -15,8 +15,7 @@ export const siteConfig = {
   WEBSITE_URL: "https://aachoclates.me",
   LOGO_PATH: "/assets/01_Logo/logo.png",
   ADDRESS:
-    "Near Shradhdha Library, Nehru Nagar, P&T Road, near Sharda Vidya Mandir School, Kotra Sultanabad, Bhopal, Madhya Pradesh 462003",
+    "MIG A-124, P&T Road, Near Shradhdha Library, Nehru Nagar, Kotra Sultanabad, Bhopal, MP 462003",
   SHORT_LOCATION: "Nehru Nagar, Kotra Sultanabad, Bhopal (MP 462003)",
-  GOOGLE_MAPS_URL:
-    "https://www.google.com/maps/search/?api=1&query=Near+Shradhdha+Library+Nehru+Nagar+P%26T+Road+near+Sharda+Vidya+Mandir+School+Kotra+Sultanabad+Bhopal+462003",
+  GOOGLE_MAPS_URL: "https://maps.app.goo.gl/Nr2heLNsMnUA34UY6",
 } as const;
