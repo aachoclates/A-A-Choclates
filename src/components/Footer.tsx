@@ -1,21 +1,33 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import {
+  Gift,
+  HeartHandshake,
+  Mail,
+  MapPin,
+  PenTool,
+  Phone,
+  Sparkles,
+  Truck,
+} from "lucide-react";
 import { siteConfig } from "../config/siteConfig";
 import { BrandLogo } from "./BrandLogo";
-import { InstagramIcon, WhatsAppIcon } from "./SocialIcons";
+import {
+  FacebookIcon,
+  InstagramIcon,
+  WhatsAppIcon,
+} from "./SocialIcons";
 
 const EXPLORE_LINKS = [
-  { label: "Signature Collections", to: "/collections" },
-  { label: "Gifting & Bulk Tiers", to: "/gifting-bulk" },
-  { label: "Custom Orders", to: "/order" },
-  { label: "Our Story", to: "/our-story" },
+  { label: "Signature Collections", to: "/collections", icon: Sparkles },
+  { label: "Gifting & Bulk Tiers", to: "/gifting-bulk", icon: Gift },
+  { label: "Custom Orders", to: "/order", icon: PenTool },
+  { label: "Our Story", to: "/our-story", icon: HeartHandshake },
 ];
 
-const navLinkClass =
-  "group relative inline-block text-sm font-light text-[#FAF6F0]/75 transition-colors duration-300 hover:text-[#B58938] after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-[#B58938] after:transition-all after:duration-300 hover:after:w-full";
-
 export const Footer: React.FC = () => {
-  const whatsappGreetingUrl = `https://wa.me/${siteConfig.WHATSAPP_NUMBER}?text=${encodeURIComponent(
+  const whatsappBaseUrl = `https://wa.me/${siteConfig.WHATSAPP_NUMBER}`;
+  const whatsappGreetingUrl = `${whatsappBaseUrl}?text=${encodeURIComponent(
     "Hello A&A Choclates, I would like to inquire about an order."
   )}`;
 
@@ -79,13 +91,25 @@ export const Footer: React.FC = () => {
               Collections &amp; Gifting
             </h3>
             <ul className="mt-5 space-y-3.5">
-              {EXPLORE_LINKS.map((link) => (
-                <li key={link.to}>
-                  <Link to={link.to} className={navLinkClass}>
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+              {EXPLORE_LINKS.map((link) => {
+                const Icon = link.icon;
+                return (
+                  <li key={link.to}>
+                    <Link
+                      to={link.to}
+                      className="group inline-flex items-center gap-2.5 text-sm font-light text-[#FAF6F0]/75 transition-colors duration-300 hover:text-[#B58938]"
+                    >
+                      <Icon
+                        className="h-4 w-4 shrink-0 text-[#B58938]"
+                        aria-hidden="true"
+                      />
+                      <span className="relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-[#B58938] after:transition-all after:duration-300 group-hover:after:w-full">
+                        {link.label}
+                      </span>
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </div>
 
@@ -94,27 +118,49 @@ export const Footer: React.FC = () => {
             <h3 className="brand-font text-sm font-semibold uppercase tracking-[2.5px] text-[#DFC896]">
               Atelier &amp; Fulfillment
             </h3>
-            <address className="mt-5 not-italic text-sm font-light leading-[1.8] text-[#FAF6F0]/75">
-              {siteConfig.SHORT_LOCATION}
-            </address>
-            <p className="mt-3 text-sm font-light leading-[1.8] text-[#FAF6F0]/60">
-              Bhopal Self-Pickup &amp; Local Delivery • Bulk Shipping Across Madhya
-              Pradesh
-            </p>
-            <div className="mt-5 space-y-2.5 text-sm">
-              <a
-                href={`tel:+${siteConfig.WHATSAPP_NUMBER}`}
-                className="block tabular-nums text-[#FAF6F0]/85 transition-colors hover:text-[#B58938]"
-              >
-                {siteConfig.DISPLAY_PHONE}
-              </a>
-              <a
-                href={`mailto:${siteConfig.EMAIL}`}
-                className="block text-[#FAF6F0]/85 transition-colors hover:text-[#B58938]"
-              >
-                {siteConfig.EMAIL}
-              </a>
-            </div>
+            <ul className="mt-5 space-y-4 text-sm font-light text-[#FAF6F0]/75">
+              <li className="flex items-start gap-3">
+                <MapPin
+                  className="mt-0.5 h-4 w-4 shrink-0 text-[#B58938]"
+                  aria-hidden="true"
+                />
+                <span className="leading-[1.8]">{siteConfig.ADDRESS}</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Truck
+                  className="mt-0.5 h-4 w-4 shrink-0 text-[#B58938]"
+                  aria-hidden="true"
+                />
+                <span className="leading-[1.8] text-[#FAF6F0]/60">
+                  Bhopal Self-Pickup &amp; Local Delivery • Bulk Orders Across
+                  Madhya Pradesh
+                </span>
+              </li>
+              <li className="flex items-center gap-3">
+                <Phone
+                  className="h-4 w-4 shrink-0 text-[#B58938]"
+                  aria-hidden="true"
+                />
+                <a
+                  href={`tel:+${siteConfig.WHATSAPP_NUMBER}`}
+                  className="tabular-nums text-[#FAF6F0]/85 transition-colors hover:text-[#B58938]"
+                >
+                  {siteConfig.DISPLAY_PHONE}
+                </a>
+              </li>
+              <li className="flex items-center gap-3">
+                <Mail
+                  className="h-4 w-4 shrink-0 text-[#B58938]"
+                  aria-hidden="true"
+                />
+                <a
+                  href={`mailto:${siteConfig.EMAIL}`}
+                  className="text-[#FAF6F0]/85 transition-colors hover:text-[#B58938]"
+                >
+                  {siteConfig.EMAIL}
+                </a>
+              </li>
+            </ul>
           </div>
 
           {/* Col 3: Connect */}
@@ -122,27 +168,50 @@ export const Footer: React.FC = () => {
             <h3 className="brand-font text-sm font-semibold uppercase tracking-[2.5px] text-[#DFC896]">
               Connect
             </h3>
-            <ul className="mt-5 space-y-4">
+            <ul className="mt-5 space-y-3">
               <li>
                 <a
                   href={siteConfig.INSTAGRAM_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-3 text-sm text-[#FAF6F0]/80 transition-colors hover:text-[#B58938]"
+                  className="group inline-flex items-center gap-3 rounded-full border border-[#B58938]/40 bg-[#FAF6F0]/5 py-2 pl-2 pr-5 transition-all duration-300 hover:border-[#B58938] hover:bg-[#B58938]/10"
                 >
-                  <InstagramIcon className="h-4 w-4" />
-                  <span>{siteConfig.INSTAGRAM_HANDLE}</span>
+                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#B58938] text-[#2A1812]">
+                    <InstagramIcon className="h-4 w-4" />
+                  </span>
+                  <span className="text-sm text-[#FAF6F0]/85 transition-colors group-hover:text-[#FAF6F0]">
+                    {siteConfig.INSTAGRAM_HANDLE}
+                  </span>
                 </a>
               </li>
               <li>
                 <a
-                  href={whatsappGreetingUrl}
+                  href={siteConfig.FACEBOOK_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-3 text-sm text-[#FAF6F0]/80 transition-colors hover:text-[#B58938]"
+                  className="group inline-flex items-center gap-3 rounded-full border border-[#B58938]/40 bg-[#FAF6F0]/5 py-2 pl-2 pr-5 transition-all duration-300 hover:border-[#B58938] hover:bg-[#B58938]/10"
                 >
-                  <WhatsAppIcon className="h-4 w-4" />
-                  <span>WhatsApp Business</span>
+                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#B58938] text-[#2A1812]">
+                    <FacebookIcon className="h-4 w-4" />
+                  </span>
+                  <span className="text-sm text-[#FAF6F0]/85 transition-colors group-hover:text-[#FAF6F0]">
+                    Facebook
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href={whatsappBaseUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-3 rounded-full border border-[#B58938]/40 bg-[#FAF6F0]/5 py-2 pl-2 pr-5 transition-all duration-300 hover:border-[#B58938] hover:bg-[#B58938]/10"
+                >
+                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#B58938] text-[#2A1812]">
+                    <WhatsAppIcon className="h-4 w-4" />
+                  </span>
+                  <span className="text-sm text-[#FAF6F0]/85 transition-colors group-hover:text-[#FAF6F0]">
+                    WhatsApp Business
+                  </span>
                 </a>
               </li>
             </ul>

@@ -10,13 +10,13 @@ export const siteConfig = {
   DISPLAY_PHONE: "+91 76975 68715",
   EMAIL: "aachoclates@gmail.com",
   INSTAGRAM_HANDLE: "@aachoclates.me",
-  INSTAGRAM_URL: "https://instagram.com/aachoclates.me",
+  INSTAGRAM_URL: "https://www.instagram.com/aachoclates.me",
   FACEBOOK_URL: "https://www.facebook.com/profile.php?id=61594853717448",
   WEBSITE_URL: "https://aachoclates.me",
   LOGO_PATH: "/assets/01_Logo/logo.png",
   ADDRESS:
-    "Near Shradhdha Library, Nehru Nagar, MIG A-124, P&T Road, near Sharda Vidya Mandir School, Kotra Sultanabad, Bhopal, Madhya Pradesh 462003",
+    "Near Shradhdha Library, Nehru Nagar, P&T Road, near Sharda Vidya Mandir School, Kotra Sultanabad, Bhopal, Madhya Pradesh 462003",
   SHORT_LOCATION: "Nehru Nagar, Kotra Sultanabad, Bhopal (MP 462003)",
   GOOGLE_MAPS_URL:
-    "https://www.google.com/maps/search/?api=1&query=MIG+A-124+P%26T+Road+Near+Shradhdha+Library+Nehru+Nagar+Kotra+Sultanabad+Bhopal+462003",
+    "https://www.google.com/maps/search/?api=1&query=Near+Shradhdha+Library+Nehru+Nagar+P%26T+Road+near+Sharda+Vidya+Mandir+School+Kotra+Sultanabad+Bhopal+462003",
 } as const;

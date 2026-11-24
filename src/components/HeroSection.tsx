@@ -236,7 +236,7 @@ export const HeroSection: React.FC = () => {
       />
 
       {/* Foreground content */}
-      <div className="relative z-10 mx-auto flex min-h-[100svh] w-full max-w-[1280px] flex-col px-4 pb-16 pt-28 sm:px-6 md:pt-32 lg:px-8">
+      <div className="relative z-10 mx-auto flex min-h-[100svh] w-full max-w-[1280px] flex-col px-4 pb-16 pt-28 sm:px-6 md:px-16 md:pt-32 lg:px-20">
         <div className="grid flex-1 grid-cols-1 items-center gap-10 lg:grid-cols-12">
           <div className="lg:col-span-7">
             <AnimatePresence mode="wait">
@@ -283,48 +283,70 @@ export const HeroSection: React.FC = () => {
         </div>
 
         {/* Bottom progress indicators */}
-        <div
-          role="tablist"
-          aria-label="Hero slides"
-          className="mt-10 flex items-stretch gap-2 sm:gap-4"
-        >
-          {HERO_SLIDES.map((slide, index) => {
-            const isActive = index === activeSlide;
-            return (
-              <button
-                key={slide.id}
-                type="button"
-                role="tab"
-                aria-selected={isActive}
-                aria-label={`Go to slide ${index + 1}: ${slide.label}`}
-                onClick={() => goToSlide(index)}
-                className={`group flex flex-1 cursor-pointer flex-col gap-1.5 border-t-2 pt-2.5 text-left transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B58938] ${
-                  isActive
-                    ? "border-[#B58938]"
-                    : "border-[#FAF6F0]/25 hover:border-[#FAF6F0]/60"
-                }`}
-              >
-                <span
-                  className={`text-[11px] font-semibold tabular-nums tracking-[2px] transition-colors ${
+        <div className="mt-10 flex items-center gap-2 sm:gap-3">
+          {/* Mobile / tablet prev control (desktop uses floating arrows) */}
+          <button
+            type="button"
+            onClick={prevSlide}
+            aria-label="Previous slide"
+            className="inline-flex h-10 w-10 shrink-0 cursor-pointer items-center justify-center rounded-full border border-[#FAF6F0]/40 bg-[#2A1812]/40 text-[#FAF6F0] backdrop-blur-sm transition-colors hover:border-[#B58938] hover:bg-[#B58938] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B58938] md:hidden"
+          >
+            <ChevronLeft className="h-5 w-5" aria-hidden="true" />
+          </button>
+
+          <div
+            role="tablist"
+            aria-label="Hero slides"
+            className="flex flex-1 items-stretch gap-2 sm:gap-4"
+          >
+            {HERO_SLIDES.map((slide, index) => {
+              const isActive = index === activeSlide;
+              return (
+                <button
+                  key={slide.id}
+                  type="button"
+                  role="tab"
+                  aria-selected={isActive}
+                  aria-label={`Go to slide ${index + 1}: ${slide.label}`}
+                  onClick={() => goToSlide(index)}
+                  className={`group flex flex-1 cursor-pointer flex-col gap-1.5 border-t-2 pt-2.5 text-left transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B58938] ${
                     isActive
-                      ? "text-[#B58938]"
-                      : "text-[#FAF6F0]/55 group-hover:text-[#FAF6F0]/80"
+                      ? "border-[#B58938]"
+                      : "border-[#FAF6F0]/25 hover:border-[#FAF6F0]/60"
                   }`}
                 >
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <span
-                  className={`truncate text-[11px] transition-colors sm:text-xs ${
-                    isActive
-                      ? "text-[#FAF6F0]"
-                      : "text-[#FAF6F0]/55 group-hover:text-[#FAF6F0]/80"
-                  }`}
-                >
-                  {slide.label}
-                </span>
-              </button>
-            );
-          })}
+                  <span
+                    className={`text-[11px] font-semibold tabular-nums tracking-[2px] transition-colors ${
+                      isActive
+                        ? "text-[#B58938]"
+                        : "text-[#FAF6F0]/55 group-hover:text-[#FAF6F0]/80"
+                    }`}
+                  >
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <span
+                    className={`truncate text-[11px] transition-colors sm:text-xs ${
+                      isActive
+                        ? "text-[#FAF6F0]"
+                        : "text-[#FAF6F0]/55 group-hover:text-[#FAF6F0]/80"
+                    }`}
+                  >
+                    {slide.label}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Mobile / tablet next control */}
+          <button
+            type="button"
+            onClick={nextSlide}
+            aria-label="Next slide"
+            className="inline-flex h-10 w-10 shrink-0 cursor-pointer items-center justify-center rounded-full border border-[#FAF6F0]/40 bg-[#2A1812]/40 text-[#FAF6F0] backdrop-blur-sm transition-colors hover:border-[#B58938] hover:bg-[#B58938] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B58938] md:hidden"
+          >
+            <ChevronRight className="h-5 w-5" aria-hidden="true" />
+          </button>
         </div>
       </div>
 
@@ -333,7 +355,7 @@ export const HeroSection: React.FC = () => {
         type="button"
         onClick={prevSlide}
         aria-label="Previous slide"
-        className="absolute left-3 top-1/2 z-20 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-[#FAF6F0]/40 bg-[#2A1812]/40 text-[#FAF6F0] backdrop-blur-sm transition-colors hover:border-[#B58938] hover:bg-[#B58938] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B58938] md:flex lg:left-5"
+        className="absolute left-4 top-1/2 z-20 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-[#FAF6F0]/40 bg-[#2A1812]/40 text-[#FAF6F0] backdrop-blur-sm transition-colors hover:border-[#B58938] hover:bg-[#B58938] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B58938] md:flex lg:left-6"
       >
         <ChevronLeft className="h-5 w-5" aria-hidden="true" />
       </button>
@@ -342,7 +364,7 @@ export const HeroSection: React.FC = () => {
         type="button"
         onClick={nextSlide}
         aria-label="Next slide"
-        className="absolute right-3 top-1/2 z-20 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-[#FAF6F0]/40 bg-[#2A1812]/40 text-[#FAF6F0] backdrop-blur-sm transition-colors hover:border-[#B58938] hover:bg-[#B58938] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B58938] md:flex lg:right-5"
+        className="absolute right-4 top-1/2 z-20 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-[#FAF6F0]/40 bg-[#2A1812]/40 text-[#FAF6F0] backdrop-blur-sm transition-colors hover:border-[#B58938] hover:bg-[#B58938] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B58938] md:flex lg:right-6"
       >
         <ChevronRight className="h-5 w-5" aria-hidden="true" />
       </button>
