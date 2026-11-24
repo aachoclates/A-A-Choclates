@@ -1,33 +1,55 @@
-import React from "react";
-import { ExternalLink, Mail, MapPin, Phone } from "lucide-react";
+import React, { useRef, useState } from "react";
+import {
+  ExternalLink,
+  Mail,
+  MapPin,
+  Pause,
+  Phone,
+  Play,
+  Volume2,
+  VolumeX,
+} from "lucide-react";
 import { siteConfig } from "../config/siteConfig";
+import { CRAFT_STUDIO_PHOTOS } from "../data/catalogData";
 import { ArtisanalImage } from "./ArtisanalImage";
 import { InstagramIcon } from "./SocialIcons";
 
+const CRAFT_VIDEO_SRC = "/assets/03_Videos/aachoclates-video-12.mp4";
+const CRAFT_VIDEO_POSTER = "/images/craft-studio.jpg";
+
 export const CraftAndLocation: React.FC = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(true);
+  const [isMuted, setIsMuted] = useState(true);
+
+  const togglePlay = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    if (video.paused) {
+      video.play().catch(() => {});
+      setIsPlaying(true);
+    } else {
+      video.pause();
+      setIsPlaying(false);
+    }
+  };
+
+  const toggleMute = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    video.muted = !video.muted;
+    setIsMuted(video.muted);
+  };
+
   return (
     <section
       id="craft"
       className="scroll-mt-28 bg-[#FAF6F0] py-16 sm:py-20 lg:py-24"
     >
       <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 items-stretch gap-10 lg:grid-cols-12 lg:gap-12">
-          {/* Left Studio Photography */}
-          <div className="lg:col-span-5">
-            <div className="h-full rounded-3xl border border-[#B58938]/25 bg-[#FFFFFF] p-3.5 shadow-[0_12px_35px_rgba(42,24,18,0.06)]">
-              <ArtisanalImage
-                src="/assets/02_Images/aachoclates-photo-21.jpg"
-                alt="Handcrafted chocolate making in Niquehat Khan's Bhopal studio using pure cocoa butter, roasted almonds, and dried rose petals"
-                title="A&A Choclates Artisanal Studio"
-                filename="aachoclates-photo-21.jpg"
-                aspectClassName="aspect-[4/3] lg:aspect-auto lg:h-full min-h-[340px]"
-                roundedClassName="rounded-2xl"
-              />
-            </div>
-          </div>
-
-          {/* Right Story + Studio Pickup Map Details */}
-          <div className="flex flex-col justify-center lg:col-span-7">
+        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-12">
+          {/* Left: Story + Studio Pickup Details */}
+          <div className="lg:col-span-7">
             <p className="text-xs font-semibold tracking-[3px] uppercase text-[#8B3A42]">
               Homemade Excellence · Founded by {siteConfig.founderName}
             </p>
@@ -147,6 +169,106 @@ export const CraftAndLocation: React.FC = () => {
                 </div>
               </dl>
             </div>
+          </div>
+
+          {/* Right: Studio Equipment Video Showcase */}
+          <div className="lg:col-span-5">
+            <figure className="mx-auto w-full max-w-sm">
+              <div className="relative overflow-hidden rounded-2xl border border-[#DFC896]/40 bg-[#2A1812] shadow-xl">
+                <video
+                  ref={videoRef}
+                  src={CRAFT_VIDEO_SRC}
+                  poster={CRAFT_VIDEO_POSTER}
+                  autoPlay
+                  muted={isMuted}
+                  loop
+                  playsInline
+                  preload="metadata"
+                  onPlay={() => setIsPlaying(true)}
+                  onPause={() => setIsPlaying(false)}
+                  className="block h-auto w-full"
+                >
+                  Your browser does not support the video tag.
+                </video>
+
+                {/* Minimal corner controls */}
+                <div className="absolute bottom-3 right-3 flex items-center gap-2">
+                  <button
+                    type="button"
+                    onClick={togglePlay}
+                    aria-label={isPlaying ? "Pause studio video" : "Play studio video"}
+                    className="flex h-9 w-9 items-center justify-center rounded-full bg-[#FAF6F0]/90 text-[#2A1812] shadow-sm backdrop-blur-sm transition-colors hover:bg-[#B58938] hover:text-white cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B58938]"
+                  >
+                    {isPlaying ? (
+                      <Pause className="h-4 w-4" aria-hidden="true" />
+                    ) : (
+                      <Play className="h-4 w-4" aria-hidden="true" />
+                    )}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={toggleMute}
+                    aria-label={isMuted ? "Unmute studio video" : "Mute studio video"}
+                    className="flex h-9 w-9 items-center justify-center rounded-full bg-[#FAF6F0]/90 text-[#2A1812] shadow-sm backdrop-blur-sm transition-colors hover:bg-[#B58938] hover:text-white cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B58938]"
+                  >
+                    {isMuted ? (
+                      <VolumeX className="h-4 w-4" aria-hidden="true" />
+                    ) : (
+                      <Volume2 className="h-4 w-4" aria-hidden="true" />
+                    )}
+                  </button>
+                </div>
+              </div>
+
+              <figcaption className="mt-4 text-center text-sm font-light leading-[1.7] text-[#644E46]">
+                Inside our Bhopal atelier — small-batch tempering equipment,
+                hygienic hand-craft, and 100% pure ingredients in every batch.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        {/* Fresh Creations Grid (photos 27–34) */}
+        <div className="mt-16 sm:mt-20">
+          <div className="max-w-2xl">
+            <p className="text-xs font-semibold tracking-[3px] uppercase text-[#8B3A42]">
+              Fresh from the Atelier
+            </p>
+            <h3 className="mt-2.5 brand-font text-2xl font-medium text-[#2A1812] sm:text-3xl">
+              New Creations &amp;{" "}
+              <span className="italic text-[#8B3A42]">Behind-the-Scenes Craft</span>
+            </h3>
+            <p className="mt-3 text-base leading-[1.75] text-[#644E46] font-light">
+              A fresh look at our latest handcrafted bars, floral discs, Kunafa
+              bakes, and hampers straight from the studio.
+            </p>
+          </div>
+
+          <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+            {CRAFT_STUDIO_PHOTOS.map((photo) => (
+              <figure
+                key={photo.id}
+                className="group overflow-hidden rounded-2xl border border-[#B58938]/22 bg-[#FFFFFF] shadow-[0_10px_30px_rgba(42,24,18,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-[#B58938] hover:shadow-[0_18px_40px_rgba(42,24,18,0.12)]"
+              >
+                <ArtisanalImage
+                  src={photo.src}
+                  alt={photo.title}
+                  title={photo.title}
+                  filename={photo.filename}
+                  aspectClassName="aspect-square"
+                  roundedClassName="rounded-none"
+                  className="border-0 border-b border-[#B58938]/15"
+                />
+                <figcaption className="p-3.5">
+                  <p className="text-[10px] font-semibold tracking-widest uppercase text-[#8B3A42]">
+                    {photo.category}
+                  </p>
+                  <p className="mt-0.5 truncate brand-font text-sm font-medium text-[#2A1812]">
+                    {photo.title}
+                  </p>
+                </figcaption>
+              </figure>
+            ))}
           </div>
         </div>
       </div>

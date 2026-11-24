@@ -203,21 +203,62 @@ const PHOTO_LABELS: Array<{ title: string; category: string }> = [
   { title: "Ruby & Gold Pearl Praline Reserve", category: "Celebration Reserve" },
   { title: "Small-Batch Tempering Craft in Bhopal", category: "Studio Craft" },
   { title: "Signature Grand Luxe Celebration Hamper", category: "Luxury Hampers" },
+  { title: "Festive Corporate Gift Assortment", category: "Corporate" },
+  { title: "Protein & Dry-Fruit Energy Sticks", category: "Zero Sugar" },
+  { title: "Dark Cacao Sea-Salt Pralines", category: "Celebration Reserve" },
+  { title: "Bespoke Celebration Truffles Box", category: "Luxury Hampers" },
+  { title: "Grand Luxe Celebration Hamper", category: "Luxury Hampers" },
+  { title: "Rose Petal & Nut Mendiant Discs", category: "Floral Discs" },
+  { title: "Walnut & Jaggery Dry Cake Loaf", category: "Studio Bakes" },
+  { title: "Golden Pistachio Kunafa Tray", category: "Studio Bakes" },
+  { title: "Gold-Pearl Truffle Slab Selection", category: "Celebration Reserve" },
+  { title: "Royal Stuffed Dates & Nut Rolls", category: "Zero Sugar" },
+  { title: "Custom Name Bar with Gold Pearls", category: "Personalization" },
+  { title: "Small-Batch Tempering in the Atelier", category: "Studio Craft" },
 ];
 
-export const STUDIO_PHOTOS: StudioMediaItem[] = PHOTO_LABELS.map(
-  (meta, index) => {
-    const num = String(index + 1).padStart(2, "0");
-    const filename = `aachoclates-photo-${num}.jpg`;
-    return {
-      id: `photo-${num}`,
-      type: "photo",
-      src: `/assets/02_Images/${filename}`,
-      filename,
-      title: meta.title,
-      category: meta.category,
-    };
-  }
+const padPhotoNum = (num: number) => String(num).padStart(2, "0");
+
+const photoExtension = (num: number) => (num <= 27 ? "jpg" : "jpeg");
+
+const buildPhotoItem = (
+  num: number,
+  meta: { title: string; category: string }
+): StudioMediaItem => {
+  const numStr = padPhotoNum(num);
+  const filename = `aachoclates-photo-${numStr}.${photoExtension(num)}`;
+  return {
+    id: `photo-${numStr}`,
+    type: "photo",
+    src: `/assets/02_Images/${filename}`,
+    filename,
+    title: meta.title,
+    category: meta.category,
+  };
+};
+
+const CRAFT_PHOTO_NUMS = [27, 28, 29, 30, 31, 32, 33, 34];
+
+const CATALOG_PHOTO_FILES = new Set(
+  CATALOG_ITEMS.map((item) => item.imageFilename)
+);
+
+const CRAFT_PHOTO_FILES = new Set(
+  CRAFT_PHOTO_NUMS.map(
+    (num) => `aachoclates-photo-${padPhotoNum(num)}.${photoExtension(num)}`
+  )
+);
+
+export const CRAFT_STUDIO_PHOTOS: StudioMediaItem[] = CRAFT_PHOTO_NUMS.map(
+  (num) => buildPhotoItem(num, PHOTO_LABELS[num - 1])
+);
+
+export const STUDIO_PHOTOS: StudioMediaItem[] = PHOTO_LABELS.map((meta, index) =>
+  buildPhotoItem(index + 1, meta)
+).filter(
+  (photo) =>
+    !CATALOG_PHOTO_FILES.has(photo.filename) &&
+    !CRAFT_PHOTO_FILES.has(photo.filename)
 );
 
 const VIDEO_SPECS: Array<{ filename: string; title: string; category: string }> = [
@@ -255,11 +296,6 @@ const VIDEO_SPECS: Array<{ filename: string; title: string; category: string }> 
     filename: "aachoclates-video-07.mp4",
     title: "Gold-Pearl Truffle Square Detailing",
     category: "Celebration Reserve",
-  },
-  {
-    filename: "aachoclates-video-08.mp4",
-    title: "Royal Stuffed Dates & Roasted Nut Filling",
-    category: "Zero Sugar",
   },
   {
     filename: "aachoclates-video-09.mp4",

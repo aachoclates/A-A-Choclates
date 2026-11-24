@@ -280,11 +280,13 @@ export const StudioMediaGallery: React.FC = () => {
         <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
           <div className="max-w-2xl">
             <p className="text-xs font-semibold tracking-[0.2em] uppercase text-[#8B3A42]">
-              Complete Studio Visual Gallery
+              Curated Studio Visual Gallery
             </p>
             <h2 className="mt-2.5 brand-font text-3xl font-medium text-[#2A1812] sm:text-4xl">
-              All 22 Product Photos &amp;{" "}
-              <span className="italic text-[#8B3A42]">12 Crafting Reels</span>
+              All {STUDIO_PHOTOS.length} Product Photos &amp;{" "}
+              <span className="italic text-[#8B3A42]">
+                {STUDIO_VIDEOS.length} Crafting Reels
+              </span>
             </h2>
             <p className="mt-3 text-base text-[#644E46]">
               Explore every handcrafted slab, floral disc, Kunafa bake, and
