@@ -44,44 +44,214 @@
       rel="stylesheet"
     />
 
-    <!-- LocalBusiness Schema.org JSON-LD for Bhopal Studio -->
+    <!-- Structured Data: LocalBusiness + WebSite + Products + FAQ (@graph) -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "A&A Choclates",
-        "slogan": "CRAFT WITH CARE",
-        "description": "Artisanal homemade chocolate and healthy dry-fruit confectionery studio in Bhopal founded by Niquehat Khan, crafting customized name chocolates, floral dry-fruit discs, Kunafa bakes, stuffed dates, 8g protein choco laddus, and bespoke wedding and corporate gift hampers.",
-        "founder": {
-          "@type": "Person",
-          "name": "Niquehat Khan"
-        },
-        "telephone": "+91-76975-68715",
-        "email": "aachoclates@gmail.com",
-        "url": "https://aachoclates.me",
-        "sameAs": [
-  "https://instagram.com/aachoclates.me",
-  "https://www.facebook.com/profile.php?id=61594853717448"
-],
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "MIG A-124, P&T Road, Near Shradhdha Library, Nehru Nagar, Kotra Sultanabad",
-          "addressLocality": "Bhopal",
-          "addressRegion": "Madhya Pradesh",
-          "postalCode": "462003",
-          "addressCountry": "IN"
-        },
-        "areaServed": [
+        "@graph": [
           {
-            "@type": "City",
-            "name": "Bhopal"
+            "@type": ["LocalBusiness", "Bakery"],
+            "@id": "https://www.aachoclates.me/#business",
+            "name": "A&A Choclates",
+            "url": "https://www.aachoclates.me",
+            "slogan": "CRAFT WITH CARE",
+            "description": "Artisanal homemade chocolate and healthy dry-fruit confectionery studio in Bhopal founded by Niquehat Khan, crafting customized name chocolates, floral dry-fruit discs, Kunafa bakes, stuffed dates, 8g protein choco laddus, and bespoke wedding and corporate gift hampers.",
+            "founder": {
+              "@type": "Person",
+              "name": "Niquehat Khan"
+            },
+            "image": "https://www.aachoclates.me/images/hero-hamper.jpg",
+            "logo": "https://www.aachoclates.me/assets/01_Logo/logo.png",
+            "telephone": "+917697568715",
+            "email": "aachoclates@gmail.com",
+            "priceRange": "\u20B9149 - \u20B91,599",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "MIG A-124, P&T Road, Nehru Nagar, Kotra Sultanabad",
+              "addressLocality": "Bhopal",
+              "addressRegion": "MP",
+              "postalCode": "462003",
+              "addressCountry": "IN"
+            },
+            "areaServed": {
+              "@type": "City",
+              "name": "Bhopal"
+            },
+            "openingHoursSpecification": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday",
+                "Sunday"
+              ],
+              "opens": "10:00",
+              "closes": "21:30"
+            },
+            "sameAs": [
+              "https://www.instagram.com/aachoclates.me",
+              "https://www.facebook.com/profile.php?id=61594853717448",
+              "https://maps.google.com/maps?cid=8694217777439434397"
+            ],
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "5.0",
+              "reviewCount": "5",
+              "bestRating": "5",
+              "worstRating": "1"
+            }
           },
           {
-            "@type": "State",
-            "name": "Madhya Pradesh"
+            "@type": "WebSite",
+            "@id": "https://www.aachoclates.me/#website",
+            "url": "https://www.aachoclates.me",
+            "name": "A&A Choclates",
+            "publisher": {
+              "@id": "https://www.aachoclates.me/#business"
+            }
+          },
+          {
+            "@type": "Product",
+            "@id": "https://www.aachoclates.me/#product-entry-treat-box",
+            "name": "Entry Treat Box (4 pcs)",
+            "description": "Thoughtful personal token or wedding welcome favor. Includes 4 handcrafted floral discs or truffle squares in a ribbon-tied warm parchment presentation.",
+            "image": "https://www.aachoclates.me/assets/02_Images/aachoclates-photo-19.jpg",
+            "brand": {
+              "@type": "Brand",
+              "name": "A&A Choclates"
+            },
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "INR",
+              "price": "159",
+              "availability": "https://schema.org/InStock",
+              "url": "https://www.aachoclates.me/order",
+              "seller": {
+                "@id": "https://www.aachoclates.me/#business"
+              }
+            }
+          },
+          {
+            "@type": "Product",
+            "@id": "https://www.aachoclates.me/#product-signature-celebration-box",
+            "name": "Signature Celebration Box (8\u201312 pcs)",
+            "description": "Our most loved assortment for families and corporate teams (retail range \u20B9499\u2013\u20B9699). Includes 8\u201312 assorted floral discs, stuffed dates and truffles, with an option to add 8g Protein Choco Laddus and a custom ribbon tag or festive sleeve.",
+            "image": "https://www.aachoclates.me/assets/02_Images/aachoclates-photo-23.jpg",
+            "brand": {
+              "@type": "Brand",
+              "name": "A&A Choclates"
+            },
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "INR",
+              "price": "499",
+              "availability": "https://schema.org/InStock",
+              "url": "https://www.aachoclates.me/order",
+              "seller": {
+                "@id": "https://www.aachoclates.me/#business"
+              }
+            }
+          },
+          {
+            "@type": "Product",
+            "@id": "https://www.aachoclates.me/#product-grand-luxe-hamper",
+            "name": "Grand Luxe Hamper",
+            "description": "Statement gifting built around your celebration theme (retail range \u20B91,299\u2013\u20B91,599). Includes a Custom Name Bar, 10\u201312 assorted artisanal pieces, a choice of Artisanal Dry Cake or Hot Chocolate Stirrers, and a luxury keepsake hamper box with a personalized card.",
+            "image": "https://www.aachoclates.me/assets/02_Images/aachoclates-photo-21.jpg",
+            "brand": {
+              "@type": "Brand",
+              "name": "A&A Choclates"
+            },
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "INR",
+              "price": "1299",
+              "availability": "https://schema.org/InStock",
+              "url": "https://www.aachoclates.me/order",
+              "seller": {
+                "@id": "https://www.aachoclates.me/#business"
+              }
+            }
+          },
+          {
+            "@type": "Product",
+            "@id": "https://www.aachoclates.me/#product-dry-cakes-kunafa",
+            "name": "Artisanal Dry Cakes & Kunafa Bakes",
+            "description": "Fresh studio bakes (range \u20B9350\u2013\u20B9650): Walnut Dry Cake, Kunafa Specialty Bakes and Atta-Jaggery Healthy Cake, baked fresh in small batches.",
+            "image": "https://www.aachoclates.me/assets/02_Images/aachoclates-photo-07.jpg",
+            "brand": {
+              "@type": "Brand",
+              "name": "A&A Choclates"
+            },
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "INR",
+              "price": "350",
+              "availability": "https://schema.org/InStock",
+              "url": "https://www.aachoclates.me/order",
+              "seller": {
+                "@id": "https://www.aachoclates.me/#business"
+              }
+            }
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://www.aachoclates.me/#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Where is A&A Choclates located in Bhopal and when can I visit for pickup?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A&A Choclates is located at MIG A-124, P&T Road, Nehru Nagar, Kotra Sultanabad, Bhopal, Madhya Pradesh 462003. The studio is open daily from 10:00 AM to 9:30 PM for self-pickup and local Bhopal delivery."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What types of artisanal and customized chocolates does A&A Choclates offer?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Our Bhopal atelier crafts customized name chocolates, floral and dry-fruit mendiant discs, artisanal dry cakes and Kunafa bakes, gold-pearl truffle squares and loaded slabs, royal stuffed dates, 8g protein choco laddus, and curated gift hampers with hot chocolate stirrer spoons."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do I order customized name chocolates or bulk gifting boxes in Bhopal?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Build your custom box or bulk quote at aachoclates.me/order, then confirm the details with our team on WhatsApp at +91 76975 68715. Every batch is hand-tempered to order in our Bhopal studio."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I place bulk orders for weddings, birthdays, festivals, or corporate gifting in Bhopal?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. We curate wedding and Nikah favors (MOQ 15+ boxes), corporate and festive gifting hampers (MOQ 10+), and boutique or cafe wholesale. Share your occasion and date via the order page or WhatsApp for a tailored quote and dispatch schedule."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do you offer delivery across Bhopal and a self-pickup option?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. We offer studio self-pickup in Nehru Nagar, local delivery across Bhopal, and bulk dispatch across Madhya Pradesh. You can add your preferred delivery or pickup date on the order page."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How can I check A&A Choclates customer reviews or contact founder Niquehat Khan?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A&A Choclates holds a 5.0-star rating from 5 Google reviews. You can read them on our Google Business Profile, or reach founder Niquehat Khan directly on WhatsApp at +91 76975 68715 or via aachoclates.me/order."
+                }
+              }
+            ]
           }
-        ],
-        "priceRange": "₹149 - ₹1599+"
+        ]
       }
     </script>
   </head>

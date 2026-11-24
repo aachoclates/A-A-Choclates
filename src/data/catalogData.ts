@@ -475,6 +475,50 @@ export const GOOGLE_RATING_ONLY_REVIEWS: Array<{ author: string }> = [
   { author: "Asjad Khan" },
 ];
 
+export interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+export const FAQ_ITEMS: FAQItem[] = [
+  {
+    question:
+      "Where is A&A Choclates located in Bhopal and when can I visit for pickup?",
+    answer:
+      "A&A Choclates is located at MIG A-124, P&T Road, Nehru Nagar, Kotra Sultanabad, Bhopal, Madhya Pradesh 462003. The studio is open daily from 10:00 AM to 9:30 PM for self-pickup and local Bhopal delivery.",
+  },
+  {
+    question:
+      "What types of artisanal and customized chocolates does A&A Choclates offer?",
+    answer:
+      "Our Bhopal atelier crafts customized name chocolates, floral and dry-fruit mendiant discs, artisanal dry cakes and Kunafa bakes, gold-pearl truffle squares and loaded slabs, royal stuffed dates, 8g protein choco laddus, and curated gift hampers with hot chocolate stirrer spoons.",
+  },
+  {
+    question:
+      "How do I order customized name chocolates or bulk gifting boxes in Bhopal?",
+    answer:
+      "Build your custom box or bulk quote at aachoclates.me/order, then confirm the details with our team on WhatsApp at +91 76975 68715. Every batch is hand-tempered to order in our Bhopal studio.",
+  },
+  {
+    question:
+      "Can I place bulk orders for weddings, birthdays, festivals, or corporate gifting in Bhopal?",
+    answer:
+      "Yes. We curate wedding and Nikah favors (MOQ 15+ boxes), corporate and festive gifting hampers (MOQ 10+), and boutique or cafe wholesale. Share your occasion and date via the order page or WhatsApp for a tailored quote and dispatch schedule.",
+  },
+  {
+    question:
+      "Do you offer delivery across Bhopal and a self-pickup option?",
+    answer:
+      "Yes. We offer studio self-pickup in Nehru Nagar, local delivery across Bhopal, and bulk dispatch across Madhya Pradesh. You can add your preferred delivery or pickup date on the order page.",
+  },
+  {
+    question:
+      "How can I check A&A Choclates customer reviews or contact founder Niquehat Khan?",
+    answer:
+      "A&A Choclates holds a 5.0-star rating from 5 Google reviews. You can read them on our Google Business Profile, or reach founder Niquehat Khan directly on WhatsApp at +91 76975 68715 or via aachoclates.me/order.",
+  },
+];
+
 export const QUOTE_SELECTION_OPTIONS: string[] = [
   ...PRICING_TIERS.map((t) => t.quoteSelectValue),
   ...CATALOG_ITEMS.map((c) => c.quoteSelectValue),

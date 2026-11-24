@@ -2,6 +2,7 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ArrowRight, Gift, Heart, Leaf, Sparkles } from "lucide-react";
 import { CatalogGrid } from "../components/CatalogGrid";
+import { FAQSection } from "../components/FAQSection";
 import { GoogleReviewsSection } from "../components/GoogleReviewsSection";
 import { HeroSection } from "../components/HeroSection";
 import { PricingTiersSection } from "../components/PricingTiersSection";
@@ -166,6 +167,8 @@ export const HomePage: React.FC = () => {
           </div>
         </div>
       </section>
+
+      <FAQSection />
     </>
   );
 };
