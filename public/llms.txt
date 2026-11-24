@@ -16,11 +16,12 @@
 - Studio pickup and local delivery in Bhopal, with temperature-safe shipping across Madhya Pradesh
 
 ## Key Pages
-- Home: https://aachoclates.me/
-- Collections: https://aachoclates.me/collections
-- Gifting & Bulk: https://aachoclates.me/gifting-bulk
-- Our Story: https://aachoclates.me/our-story
-- Order / Build a Quote: https://aachoclates.me/order
+- [Home](https://www.aachoclates.me/)
+- [Collections](https://www.aachoclates.me/collections)
+- [Gifting & Bulk](https://www.aachoclates.me/gifting-bulk)
+- [Our Story](https://www.aachoclates.me/our-story)
+- [Order & Bulk Quote](https://www.aachoclates.me/order)
+- [Sitemap](https://www.aachoclates.me/sitemap.xml)
 
 ## Contact
 - Phone / WhatsApp: +91 76975 68715

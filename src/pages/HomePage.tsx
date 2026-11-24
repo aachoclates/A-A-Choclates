@@ -1,16 +1,31 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ArrowRight, Gift, Heart, Leaf, Sparkles } from "lucide-react";
 import { CatalogGrid } from "../components/CatalogGrid";
-import { FAQSection } from "../components/FAQSection";
-import { GoogleReviewsSection } from "../components/GoogleReviewsSection";
 import { HeroSection } from "../components/HeroSection";
 import { PricingTiersSection } from "../components/PricingTiersSection";
 import { InstagramIcon } from "../components/SocialIcons";
-import { TestimonialsSection } from "../components/TestimonialsSection";
 import { TrustStrip } from "../components/TrustStrip";
 import { siteConfig } from "../config/siteConfig";
 import { PricingTier } from "../data/catalogData";
+
+const GoogleReviewsSection = lazy(() =>
+  import("../components/GoogleReviewsSection").then((m) => ({
+    default: m.GoogleReviewsSection,
+  }))
+);
+const TestimonialsSection = lazy(() =>
+  import("../components/TestimonialsSection").then((m) => ({
+    default: m.TestimonialsSection,
+  }))
+);
+const FAQSection = lazy(() =>
+  import("../components/FAQSection").then((m) => ({ default: m.FAQSection }))
+);
+
+const SectionFallback = () => (
+  <div className="min-h-[360px] w-full" aria-hidden="true" />
+);
 
 export const HomePage: React.FC = () => {
   const navigate = useNavigate();
@@ -122,9 +137,13 @@ export const HomePage: React.FC = () => {
         </div>
       </section>
 
-      <GoogleReviewsSection />
+      <Suspense fallback={<SectionFallback />}>
+        <GoogleReviewsSection />
+      </Suspense>
 
-      <TestimonialsSection />
+      <Suspense fallback={<SectionFallback />}>
+        <TestimonialsSection />
+      </Suspense>
 
       {/* Direct Order CTA Band */}
       <section className="bg-[#FAF6F0] py-16 sm:py-20">
@@ -168,7 +187,9 @@ export const HomePage: React.FC = () => {
         </div>
       </section>
 
-      <FAQSection />
+      <Suspense fallback={<SectionFallback />}>
+        <FAQSection />
+      </Suspense>
     </>
   );
 };

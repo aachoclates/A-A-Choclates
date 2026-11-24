@@ -265,7 +265,7 @@ export const HeroSection: React.FC = () => {
       <div className="relative z-10 mx-auto flex min-h-[100svh] w-full max-w-[1280px] flex-col px-4 pb-16 pt-28 sm:px-6 md:px-16 md:pt-32 lg:px-20">
         <div className="grid flex-1 grid-cols-1 items-center gap-10 lg:grid-cols-12">
           <div className="lg:col-span-7">
-            <AnimatePresence mode="wait">
+            <AnimatePresence mode="wait" initial={false}>
               <motion.div
                 key={currentSlide.id}
                 initial={{ opacity: 0, y: 18 }}
