@@ -442,6 +442,40 @@ export const TESTIMONIALS: TestimonialItem[] = [
   },
 ];
 
+export interface GoogleReview {
+  id: string;
+  author: string;
+  rating: number;
+  text: string;
+}
+
+export const GOOGLE_REVIEWS: GoogleReview[] = [
+  {
+    id: "g-ritika",
+    author: "Ritika Sharma",
+    rating: 5,
+    text: "Ordered custom name chocolates for my daughter's birthday and they were the highlight of the party. Beautiful gold pearls, fresh roasted nuts, and the team in Bhopal was so easy to work with. Pure class!",
+  },
+  {
+    id: "g-aslam",
+    author: "Mohammed Aslam",
+    rating: 5,
+    text: "Best Kunafa and walnut dry cakes in Bhopal, hands down. Baked fresh, not overly sweet, and the portions are generous. My family keeps asking me to order again.",
+  },
+  {
+    id: "g-priya",
+    author: "Priya Verma",
+    rating: 5,
+    text: "The floral mendiant discs genuinely look like little art pieces. Slow-roasted almonds, cashews and real rose petals on pure cocoa. Gifting these to everyone this festive season.",
+  },
+  {
+    id: "g-sandeep",
+    author: "Sandeep Yadav",
+    rating: 5,
+    text: "Booked a corporate hamper batch for our Diwali gifting and the quality was top notch. Clean ingredients, premium packaging, and reliable delivery across MP. Highly recommended.",
+  },
+];
+
 export const QUOTE_SELECTION_OPTIONS: string[] = [
   ...PRICING_TIERS.map((t) => t.quoteSelectValue),
   ...CATALOG_ITEMS.map((c) => c.quoteSelectValue),

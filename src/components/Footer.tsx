@@ -168,53 +168,39 @@ export const Footer: React.FC = () => {
             <h3 className="brand-font text-sm font-semibold uppercase tracking-[2.5px] text-[#DFC896]">
               Connect
             </h3>
-            <ul className="mt-5 space-y-3">
-              <li>
-                <a
-                  href={siteConfig.INSTAGRAM_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-3 rounded-full border border-[#B58938]/40 bg-[#FAF6F0]/5 py-2 pl-2 pr-5 transition-all duration-300 hover:border-[#B58938] hover:bg-[#B58938]/10"
-                >
-                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#B58938] text-[#2A1812]">
-                    <InstagramIcon className="h-4 w-4" />
-                  </span>
-                  <span className="text-sm text-[#FAF6F0]/85 transition-colors group-hover:text-[#FAF6F0]">
-                    {siteConfig.INSTAGRAM_HANDLE}
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href={siteConfig.FACEBOOK_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-3 rounded-full border border-[#B58938]/40 bg-[#FAF6F0]/5 py-2 pl-2 pr-5 transition-all duration-300 hover:border-[#B58938] hover:bg-[#B58938]/10"
-                >
-                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#B58938] text-[#2A1812]">
-                    <FacebookIcon className="h-4 w-4" />
-                  </span>
-                  <span className="text-sm text-[#FAF6F0]/85 transition-colors group-hover:text-[#FAF6F0]">
-                    Facebook
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href={whatsappBaseUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-3 rounded-full border border-[#B58938]/40 bg-[#FAF6F0]/5 py-2 pl-2 pr-5 transition-all duration-300 hover:border-[#B58938] hover:bg-[#B58938]/10"
-                >
-                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#B58938] text-[#2A1812]">
-                    <WhatsAppIcon className="h-4 w-4" />
-                  </span>
-                  <span className="text-sm text-[#FAF6F0]/85 transition-colors group-hover:text-[#FAF6F0]">
-                    WhatsApp Business
-                  </span>
-                </a>
-              </li>
-            </ul>
+            <div className="mt-5 flex items-center gap-4">
+              <a
+                href={siteConfig.INSTAGRAM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="flex h-11 w-11 items-center justify-center rounded-full text-white shadow-md transition-transform duration-300 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B58938]"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(135deg, #F58529 0%, #DD2A7B 45%, #8134AF 75%, #515BD4 100%)",
+                }}
+              >
+                <InstagramIcon className="h-5 w-5" />
+              </a>
+              <a
+                href={siteConfig.FACEBOOK_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="flex h-11 w-11 items-center justify-center rounded-full bg-[#1877F2] text-white shadow-md transition-transform duration-300 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B58938]"
+              >
+                <FacebookIcon className="h-5 w-5" />
+              </a>
+              <a
+                href={whatsappBaseUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+                className="flex h-11 w-11 items-center justify-center rounded-full bg-[#25D366] text-white shadow-md transition-transform duration-300 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B58938]"
+              >
+                <WhatsAppIcon className="h-5 w-5" />
+              </a>
+            </div>
           </div>
         </div>
 

@@ -17,5 +17,7 @@ export const siteConfig = {
   ADDRESS:
     "MIG A-124, P&T Road, Near Shradhdha Library, Nehru Nagar, Kotra Sultanabad, Bhopal, MP 462003",
   SHORT_LOCATION: "Nehru Nagar, Kotra Sultanabad, Bhopal (MP 462003)",
-  GOOGLE_MAPS_URL: "https://maps.app.goo.gl/Nr2heLNsMnUA34UY6",
+  GOOGLE_MAPS_URL: "https://maps.app.goo.gl/cfB1GdCEXBde7P7t6",
+  GOOGLE_REVIEW_URL:
+    "https://www.google.com/maps/place//data=!4m3!3m2!1s0x397c4300058a41bf:0x78a811013029e69d!12e1?laa=nmx-review-solicitation-ia2",
 } as const;
