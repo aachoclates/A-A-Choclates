@@ -51,6 +51,7 @@ export const GoogleReviewsSection: React.FC = () => {
               <div>
                 <div
                   className="flex items-center gap-1 text-[#B58938]"
+                  role="img"
                   aria-label={`${review.rating} out of 5 stars`}
                 >
                   {Array.from({ length: review.rating }).map((_, index) => (
@@ -88,7 +89,8 @@ export const GoogleReviewsSection: React.FC = () => {
               className="flex items-center gap-2.5 text-center"
             >
               <span
-                className="text-sm tracking-[0.15em] text-[#B58938]"
+                className="text-sm tracking-[0.15em] text-[#7D5B1C]"
+                role="img"
                 aria-label="5 out of 5 stars"
               >
                 ★★★★★

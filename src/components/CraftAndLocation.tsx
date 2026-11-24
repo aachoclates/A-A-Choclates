@@ -15,7 +15,7 @@ import { ArtisanalImage } from "./ArtisanalImage";
 import { InstagramIcon } from "./SocialIcons";
 
 const CRAFT_VIDEO_SRC = "/assets/03_Videos/aachoclates-video-12.mp4";
-const CRAFT_VIDEO_POSTER = "/images/craft-studio.jpg";
+const CRAFT_VIDEO_POSTER = "/images/craft-studio.webp";
 
 export const CraftAndLocation: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);

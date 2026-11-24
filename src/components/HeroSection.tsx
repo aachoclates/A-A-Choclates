@@ -14,6 +14,7 @@ interface HeroSlide {
   id: string;
   label: string;
   image: string;
+  imageMobile?: string;
   alt: string;
   badge: string;
   headline: string;
@@ -33,7 +34,8 @@ const HERO_SLIDES: HeroSlide[] = [
   {
     id: "flagship",
     label: "Brand Flagship",
-    image: "/images/hero-hamper.jpg",
+    image: "/images/hero-hamper.webp",
+    imageMobile: "/images/hero-hamper-mobile.webp",
     alt: "A&A Choclates luxury signature chocolate hamper",
     badge: "CRAFT WITH CARE • BHOPAL ATELIER",
     headline: "Handcrafted Confections & Healthy Dry-Fruit Treats",
@@ -45,7 +47,7 @@ const HERO_SLIDES: HeroSlide[] = [
   {
     id: "name-bar",
     label: "Name Chocolates",
-    image: "/images/prod-1-name-bar.jpg",
+    image: "/images/prod-1-name-bar.webp",
     alt: "Customized name chocolate bar with edible gold pearls and roasted nuts",
     badge: "CUSTOM NAME BARS • MADE TO ORDER",
     headline: "Unke Naam Ki Chocolate, Jo Seedha Dil Jeet Le.",
@@ -57,7 +59,7 @@ const HERO_SLIDES: HeroSlide[] = [
   {
     id: "floral-discs",
     label: "Floral Discs",
-    image: "/images/prod-2-floral-discs.jpg",
+    image: "/images/prod-2-floral-discs.webp",
     alt: "Floral mendiant discs topped with slow-roasted nuts and rose petals",
     badge: "FLORAL MENDIANTS • ZERO PRESERVATIVES",
     headline: "Har Bite Mein Shahi Crunch, Har Disc Ek Art Piece.",
@@ -69,7 +71,7 @@ const HERO_SLIDES: HeroSlide[] = [
   {
     id: "kunafa-cakes",
     label: "Kunafa & Cakes",
-    image: "/images/prod-3-cakes-kunafa.jpg",
+    image: "/images/prod-3-cakes-kunafa.webp",
     alt: "Freshly baked Kunafa and walnut dry cakes",
     badge: "FRESH OVEN • KUNAFA & WALNUT CAKES",
     headline: "Garma-Garam Kunafa Crunch Aur Walnut Cake Ka Asli Mazaa.",
@@ -81,7 +83,7 @@ const HERO_SLIDES: HeroSlide[] = [
   {
     id: "protein-laddus",
     label: "Protein Laddus",
-    image: "/images/prod-6-dates-laddus.jpg",
+    image: "/images/prod-6-dates-laddus.webp",
     alt: "8g protein choco laddus, rose-stuffed dates and dry-fruit energy sticks",
     badge: "GUILT-FREE INDULGENCE • 8G PROTEIN",
     headline: "Meetha Bhi, Healthy Bhi—Bina Ek Chammach Cheeni Ke.",
@@ -217,15 +219,39 @@ export const HeroSection: React.FC = () => {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.9, ease: "easeInOut" }}
         >
-          <motion.img
-            src={currentSlide.image}
-            alt={currentSlide.alt}
-            aria-hidden="true"
-            className="absolute inset-0 h-full w-full object-cover object-center"
-            initial={{ scale: 1.08 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 7, ease: "easeOut" }}
-          />
+          {currentSlide.imageMobile ? (
+            <picture>
+              <source
+                media="(max-width: 768px)"
+                srcSet={currentSlide.imageMobile}
+              />
+              <motion.img
+                src={currentSlide.image}
+                alt={currentSlide.alt}
+                aria-hidden="true"
+                loading={activeSlide === 0 ? "eager" : "lazy"}
+                fetchPriority={activeSlide === 0 ? "high" : "auto"}
+                decoding={activeSlide === 0 ? "sync" : "async"}
+                className="absolute inset-0 h-full w-full object-cover object-center"
+                initial={{ scale: 1.08 }}
+                animate={{ scale: 1 }}
+                transition={{ duration: 7, ease: "easeOut" }}
+              />
+            </picture>
+          ) : (
+            <motion.img
+              src={currentSlide.image}
+              alt={currentSlide.alt}
+              aria-hidden="true"
+              loading={activeSlide === 0 ? "eager" : "lazy"}
+              fetchPriority={activeSlide === 0 ? "high" : "auto"}
+              decoding={activeSlide === 0 ? "sync" : "async"}
+              className="absolute inset-0 h-full w-full object-cover object-center"
+              initial={{ scale: 1.08 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 7, ease: "easeOut" }}
+            />
+          )}
         </motion.div>
       </AnimatePresence>
 
@@ -277,7 +303,12 @@ export const HeroSection: React.FC = () => {
               transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
               className="flex h-64 w-64 items-center justify-center rounded-full border border-[#DFC896]/40 bg-[#FAF6F0]/10 p-5 shadow-2xl backdrop-blur-md xl:h-80 xl:w-80"
             >
-              <BrandLogo className="h-full w-full" />
+              <BrandLogo
+                className="h-full w-full"
+                src="/assets/01_Logo/logo.webp"
+                width={512}
+                height={512}
+              />
             </motion.div>
           </div>
         </div>

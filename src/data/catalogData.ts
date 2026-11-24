@@ -97,8 +97,8 @@ export const CATALOG_ITEMS: CatalogItem[] = [
     shortCategory: "Signature Personalization",
     description:
       "Dark & milk chocolate bars/slabs personalized with custom names, edible flowers & gold pearls.",
-    imagePath: "/assets/02_Images/aachoclates-photo-26.jpg",
-    imageFilename: "aachoclates-photo-26.jpg",
+    imagePath: "/assets/02_Images/aachoclates-photo-26.webp",
+    imageFilename: "aachoclates-photo-26.webp",
     imageAlt:
       "Customized dark and milk chocolate bars personalized with engraved names, dried edible flowers, and gold pearls",
     quoteSelectValue: "Customized Name Chocolates",
@@ -111,8 +111,8 @@ export const CATALOG_ITEMS: CatalogItem[] = [
     shortCategory: "Hand-Tempered Mendiants",
     description:
       "Hand-tempered mendiants topped with slow-roasted cashews, almonds, pumpkin seeds & dried rose petals.",
-    imagePath: "/assets/02_Images/aachoclates-photo-19.jpg",
-    imageFilename: "aachoclates-photo-19.jpg",
+    imagePath: "/assets/02_Images/aachoclates-photo-19.webp",
+    imageFilename: "aachoclates-photo-19.webp",
     imageAlt:
       "Artisanal chocolate mendiant discs topped with roasted cashews, almonds, pumpkin seeds, and dried rose petals",
     quoteSelectValue: "Artisanal Floral & Dry-Fruit Disc Chocolates",
@@ -126,8 +126,8 @@ export const CATALOG_ITEMS: CatalogItem[] = [
     description:
       "Walnut Dry Cake, Kunafa Specialty Bakes & Atta-Jaggery Healthy Cake baked fresh in small batches.",
     priceHighlight: "₹350–₹650",
-    imagePath: "/assets/02_Images/aachoclates-photo-07.jpg",
-    imageFilename: "aachoclates-photo-07.jpg",
+    imagePath: "/assets/02_Images/aachoclates-photo-07.webp",
+    imageFilename: "aachoclates-photo-07.webp",
     imageAlt:
       "Golden artisanal Kunafa specialty bakes alongside rich walnut dry cake and atta-jaggery healthy loaf cake",
     quoteSelectValue: "Artisanal Dry Cakes & Kunafa Bakes",
@@ -140,8 +140,8 @@ export const CATALOG_ITEMS: CatalogItem[] = [
     shortCategory: "Festive & Occasion Gifting",
     description:
       "Bespoke festive hampers and rich couverture stirrer spoons crafted for warm milk indulgence.",
-    imagePath: "/assets/02_Images/aachoclates-photo-21.jpg",
-    imageFilename: "aachoclates-photo-21.jpg",
+    imagePath: "/assets/02_Images/aachoclates-photo-21.webp",
+    imageFilename: "aachoclates-photo-21.webp",
     imageAlt:
       "Curated artisanal gift hamper box paired with handmade couverture hot chocolate stirrer spoons",
     quoteSelectValue: "Curated Gift Hampers & Hot Chocolate Stirrer Spoons",
@@ -154,8 +154,8 @@ export const CATALOG_ITEMS: CatalogItem[] = [
     shortCategory: "Celebration Reserve",
     description:
       "Silk-smooth dark truffle squares finished with edible gold pearls and nut-loaded chocolate slabs.",
-    imagePath: "/assets/02_Images/aachoclates-photo-23.jpg",
-    imageFilename: "aachoclates-photo-23.jpg",
+    imagePath: "/assets/02_Images/aachoclates-photo-23.webp",
+    imageFilename: "aachoclates-photo-23.webp",
     imageAlt:
       "Dark chocolate truffle squares adorned with edible gold pearls beside nut-loaded artisanal chocolate slabs",
     quoteSelectValue:
@@ -170,8 +170,8 @@ export const CATALOG_ITEMS: CatalogItem[] = [
     shortCategory: "Zero Refined Sugar",
     description:
       "Zero refined sugar confections packed with 10+ roasted nuts, seeds, and wholesome cacao.",
-    imagePath: "/assets/02_Images/aachoclates-photo-18.jpg",
-    imageFilename: "aachoclates-photo-18.jpg",
+    imagePath: "/assets/02_Images/aachoclates-photo-18.webp",
+    imageFilename: "aachoclates-photo-18.webp",
     imageAlt:
       "Royal nut-stuffed dates, 8g protein choco laddus, and roasted dry-fruit energy bar sticks",
     quoteSelectValue:
@@ -219,7 +219,7 @@ const PHOTO_LABELS: Array<{ title: string; category: string }> = [
 
 const padPhotoNum = (num: number) => String(num).padStart(2, "0");
 
-const photoExtension = (num: number) => (num <= 27 ? "jpg" : "jpeg");
+const photoExtension = (_num: number) => "webp";
 
 const buildPhotoItem = (
   num: number,

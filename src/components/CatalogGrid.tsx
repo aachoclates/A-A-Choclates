@@ -51,16 +51,16 @@ export const CatalogGrid: React.FC<CatalogGridProps> = ({
               <div className="flex flex-1 flex-col p-7">
                 <div className="flex flex-wrap items-center gap-2 text-xs font-semibold tracking-[2px] uppercase text-[#8B3A42]">
                   <span className="tabular-nums">0{item.order}</span>
-                  <span aria-hidden="true" className="text-[#B58938]">
+                  <span aria-hidden="true" className="text-[#7D5B1C]">
                     ·
                   </span>
                   <span>{item.shortCategory}</span>
                   {item.priceHighlight && (
                     <>
-                      <span aria-hidden="true" className="text-[#B58938]">
+                      <span aria-hidden="true" className="text-[#7D5B1C]">
                         ·
                       </span>
-                      <span className="tabular-nums text-[#B58938]">
+                      <span className="tabular-nums text-[#7D5B1C]">
                         {item.priceHighlight}
                       </span>
                     </>
