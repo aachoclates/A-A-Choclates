@@ -34,6 +34,9 @@ export const HomePage: React.FC = () => {
       <HeroSection />
       <TrustStrip />
 
+      {/* Anchor target for the hero "Explore Collection" CTA */}
+      <div id="collection" className="scroll-mt-28" />
+
       {/* Featured 6 Signature Categories (clicking links to /collections) */}
       <CatalogGrid
         onSelectProduct={handleCollectionPreviewClick}

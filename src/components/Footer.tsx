@@ -1,21 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import {
-  Building2,
-  ClipboardList,
-  Compass,
-  Gift,
-  Github,
-  Linkedin,
-  Mail,
-  MapPin,
-  MessageSquareQuote,
-  Phone,
-  Sparkles,
-} from "lucide-react";
 import { siteConfig } from "../config/siteConfig";
 import { BrandLogo } from "./BrandLogo";
 import { InstagramIcon, WhatsAppIcon } from "./SocialIcons";
+
+const EXPLORE_LINKS = [
+  { label: "Signature Collections", to: "/collections" },
+  { label: "Gifting & Bulk Tiers", to: "/gifting-bulk" },
+  { label: "Custom Orders", to: "/order" },
+  { label: "Our Story", to: "/our-story" },
+];
+
+const navLinkClass =
+  "group relative inline-block text-sm font-light text-[#FAF6F0]/75 transition-colors duration-300 hover:text-[#B58938] after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-[#B58938] after:transition-all after:duration-300 hover:after:w-full";
 
 export const Footer: React.FC = () => {
   const whatsappGreetingUrl = `https://wa.me/${siteConfig.WHATSAPP_NUMBER}?text=${encodeURIComponent(
@@ -23,182 +20,148 @@ export const Footer: React.FC = () => {
   )}`;
 
   return (
-    <footer className="border-t border-[#B58938]/25 bg-[#2A1812] py-16 text-[#FAF6F0]/80">
+    <footer className="border-t border-[#B58938]/25 bg-[#2A1812] text-[#FAF6F0]">
       <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-12">
-          {/* Column 1: Brand, Logo & Socials */}
-          <div className="md:col-span-4">
-            <Link to="/" className="inline-flex items-center gap-3.5">
-              <BrandLogo className="h-11 w-11" />
+        {/* Top Atelier Band */}
+        <div className="flex flex-col gap-8 border-b border-[#DFC896]/15 py-14 lg:flex-row lg:items-center lg:justify-between">
+          <div className="max-w-xl">
+            <div className="flex items-center gap-4">
+              <Link
+                to="/"
+                aria-label="A&A Choclates home"
+                className="shrink-0 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B58938]"
+              >
+                <BrandLogo className="h-16 w-16" />
+              </Link>
               <div>
-                <h2 className="brand-font text-xl font-medium tracking-wider text-[#FAF6F0]">
+                <Link
+                  to="/"
+                  className="brand-font text-2xl font-medium tracking-wider text-[#FAF6F0]"
+                >
                   {siteConfig.brandName}
-                </h2>
-                <p className="text-[11px] font-semibold tracking-[2.5px] uppercase text-[#B58938]">
+                </Link>
+                <p className="mt-1 text-[11px] font-semibold tracking-[3px] uppercase text-[#B58938]">
                   {siteConfig.tagline}
                 </p>
               </div>
+            </div>
+
+            <p className="mt-5 text-sm font-light leading-[1.8] text-[#FAF6F0]/70">
+              Small-batch artisanal chocolates &amp; bespoke hampers handcrafted
+              in Bhopal.
+            </p>
+          </div>
+
+          <div className="flex flex-col gap-3 sm:flex-row lg:shrink-0">
+            <Link
+              to="/order"
+              className="btn-gold min-h-[48px] px-7 py-3.5"
+            >
+              <span>Order / Bulk Quote</span>
             </Link>
-
-            <p className="mt-4 text-sm font-light leading-[1.75] text-[#FAF6F0]/75">
-              {siteConfig.tagline} — Founded by {siteConfig.founderName} in
-              Bhopal, MP. Small-batch homemade chocolates, customized name bars,
-              Kunafa bakes, and healthy dry-fruit confections.
-            </p>
-
-            <div className="mt-5 flex items-center gap-3">
-              <a
-                href={siteConfig.INSTAGRAM_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="A&A Choclates on Instagram (@aachoclates.me)"
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#FAF6F0]/20 bg-[#FAF6F0]/8 text-[#B58938] transition-all hover:border-[#B58938] hover:bg-[#B58938] hover:text-[#2A1812]"
-              >
-                <InstagramIcon className="h-4 w-4" />
-              </a>
-              <a
-                href={whatsappGreetingUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Chat with A&A Choclates on WhatsApp"
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#FAF6F0]/20 bg-[#FAF6F0]/8 text-[#B58938] transition-all hover:border-[#B58938] hover:bg-[#B58938] hover:text-[#2A1812]"
-              >
-                <WhatsAppIcon className="h-4 w-4" />
-              </a>
-            </div>
-          </div>
-
-          {/* Column 2: Explore Studio with Lucide Compass heading & link icons */}
-          <div className="md:col-span-4">
-            <h3 className="flex items-center gap-2.5 brand-font text-lg font-medium text-[#FAF6F0]">
-              <Compass className="h-4 w-4 text-[#B58938]" aria-hidden="true" />
-              <span>Explore Studio</span>
-            </h3>
-            <div className="mt-2 h-[2px] w-8 bg-[#B58938]" />
-
-            <ul className="mt-5 space-y-3 text-sm font-light text-[#FAF6F0]/80">
-              <li>
-                <Link
-                  to="/collections"
-                  className="inline-flex items-center gap-2.5 transition-colors hover:text-[#B58938]"
-                >
-                  <Sparkles className="h-4 w-4 text-[#B58938]" aria-hidden="true" />
-                  <span>Signature Collections</span>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/gifting-bulk"
-                  className="inline-flex items-center gap-2.5 transition-colors hover:text-[#B58938]"
-                >
-                  <Gift className="h-4 w-4 text-[#B58938]" aria-hidden="true" />
-                  <span>Gifting &amp; Bulk Tiers</span>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/gifting-bulk#corporate-bulk"
-                  className="inline-flex items-center gap-2.5 transition-colors hover:text-[#B58938]"
-                >
-                  <Building2 className="h-4 w-4 text-[#B58938]" aria-hidden="true" />
-                  <span>Wedding &amp; Corporate Bulk</span>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/order"
-                  className="inline-flex items-center gap-2.5 transition-colors hover:text-[#B58938]"
-                >
-                  <ClipboardList className="h-4 w-4 text-[#B58938]" aria-hidden="true" />
-                  <span>Order &amp; Quote Builder</span>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/our-story#reviews"
-                  className="inline-flex items-center gap-2.5 transition-colors hover:text-[#B58938]"
-                >
-                  <MessageSquareQuote
-                    className="h-4 w-4 text-[#B58938]"
-                    aria-hidden="true"
-                  />
-                  <span>Patron Reviews / Happy Clients</span>
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Column 3: Atelier Contact with Lucide MapPin heading */}
-          <div className="md:col-span-4">
-            <h3 className="flex items-center gap-2.5 brand-font text-lg font-medium text-[#FAF6F0]">
-              <MapPin className="h-4 w-4 text-[#B58938]" aria-hidden="true" />
-              <span>Atelier Contact</span>
-            </h3>
-            <div className="mt-2 h-[2px] w-8 bg-[#B58938]" />
-
-            <p className="mt-5 text-sm font-light leading-[1.75] text-[#FAF6F0]/80">
-              {siteConfig.ADDRESS}
-            </p>
-
-            <div className="mt-4 space-y-2.5 text-sm font-light text-[#FAF6F0]/85">
-              <p className="flex items-center gap-2.5 tabular-nums">
-                <Phone className="h-4 w-4 shrink-0 text-[#B58938]" aria-hidden="true" />
-                <a
-                  href={`tel:+${siteConfig.WHATSAPP_NUMBER}`}
-                  className="transition-colors hover:text-[#B58938]"
-                >
-                  {siteConfig.DISPLAY_PHONE}
-                </a>
-              </p>
-              <p className="flex items-center gap-2.5">
-                <Mail className="h-4 w-4 shrink-0 text-[#B58938]" aria-hidden="true" />
-                <a
-                  href={`mailto:${siteConfig.EMAIL}`}
-                  className="transition-colors hover:text-[#B58938]"
-                >
-                  {siteConfig.EMAIL}
-                </a>
-              </p>
-            </div>
+            <a
+              href={whatsappGreetingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full border border-[#B58938] px-7 py-3 text-xs font-medium uppercase tracking-[2px] text-[#B58938] transition-colors duration-300 hover:bg-[#B58938] hover:text-[#2A1812] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B58938]"
+            >
+              <WhatsAppIcon className="h-4 w-4" />
+              <span>WhatsApp Order</span>
+            </a>
           </div>
         </div>
 
-        {/* Bottom Copyright + Built by Aashif Khan Credit Badge */}
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-[#FAF6F0]/12 pt-7 text-xs text-[#FAF6F0]/70 sm:flex-row">
-          <p>
-            &copy; 2026 {siteConfig.brandName}. Founded by {siteConfig.founderName}.
-            All Rights Reserved.
-          </p>
-
-          <div className="inline-flex items-center gap-3 rounded-full border border-[#B58938]/30 bg-[#FAF6F0]/6 px-4 py-1.5 text-xs text-[#FAF6F0]/85">
-            <span>
-              Built by{" "}
-              <strong className="font-medium text-[#FAF6F0]">
-                {siteConfig.developerName}
-              </strong>
-            </span>
-            <span aria-hidden="true" className="text-[#B58938]">
-              ·
-            </span>
-            <a
-              href={siteConfig.developerGithubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Aashif Khan on GitHub"
-              className="inline-flex items-center justify-center text-[#B58938] transition-colors hover:text-[#FAF6F0]"
-            >
-              <Github className="h-4 w-4" aria-hidden="true" />
-            </a>
-            <a
-              href={siteConfig.developerLinkedinUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Aashif Khan on LinkedIn"
-              className="inline-flex items-center justify-center text-[#B58938] transition-colors hover:text-[#FAF6F0]"
-            >
-              <Linkedin className="h-4 w-4" aria-hidden="true" />
-            </a>
+        {/* Middle Architectural Grid */}
+        <div className="grid grid-cols-1 gap-10 py-14 md:grid-cols-3 md:gap-0">
+          {/* Col 1: Collections & Gifting */}
+          <div className="md:pr-10">
+            <h3 className="brand-font text-sm font-semibold uppercase tracking-[2.5px] text-[#DFC896]">
+              Collections &amp; Gifting
+            </h3>
+            <ul className="mt-5 space-y-3.5">
+              {EXPLORE_LINKS.map((link) => (
+                <li key={link.to}>
+                  <Link to={link.to} className={navLinkClass}>
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
+
+          {/* Col 2: Atelier & Fulfillment */}
+          <div className="md:border-l md:border-[#DFC896]/15 md:px-10">
+            <h3 className="brand-font text-sm font-semibold uppercase tracking-[2.5px] text-[#DFC896]">
+              Atelier &amp; Fulfillment
+            </h3>
+            <address className="mt-5 not-italic text-sm font-light leading-[1.8] text-[#FAF6F0]/75">
+              {siteConfig.SHORT_LOCATION}
+            </address>
+            <p className="mt-3 text-sm font-light leading-[1.8] text-[#FAF6F0]/60">
+              Bhopal Self-Pickup &amp; Local Delivery • Bulk Shipping Across Madhya
+              Pradesh
+            </p>
+            <div className="mt-5 space-y-2.5 text-sm">
+              <a
+                href={`tel:+${siteConfig.WHATSAPP_NUMBER}`}
+                className="block tabular-nums text-[#FAF6F0]/85 transition-colors hover:text-[#B58938]"
+              >
+                {siteConfig.DISPLAY_PHONE}
+              </a>
+              <a
+                href={`mailto:${siteConfig.EMAIL}`}
+                className="block text-[#FAF6F0]/85 transition-colors hover:text-[#B58938]"
+              >
+                {siteConfig.EMAIL}
+              </a>
+            </div>
+          </div>
+
+          {/* Col 3: Connect */}
+          <div className="md:border-l md:border-[#DFC896]/15 md:pl-10">
+            <h3 className="brand-font text-sm font-semibold uppercase tracking-[2.5px] text-[#DFC896]">
+              Connect
+            </h3>
+            <ul className="mt-5 space-y-4">
+              <li>
+                <a
+                  href={siteConfig.INSTAGRAM_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-3 text-sm text-[#FAF6F0]/80 transition-colors hover:text-[#B58938]"
+                >
+                  <InstagramIcon className="h-4 w-4" />
+                  <span>{siteConfig.INSTAGRAM_HANDLE}</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href={whatsappGreetingUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-3 text-sm text-[#FAF6F0]/80 transition-colors hover:text-[#B58938]"
+                >
+                  <WhatsAppIcon className="h-4 w-4" />
+                  <span>WhatsApp Business</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Bottom Colophon Bar */}
+        <div className="flex flex-col items-center justify-between gap-3 border-t border-[#DFC896]/15 py-7 text-xs text-[#FAF6F0]/55 sm:flex-row">
+          <p>
+            &copy; 2026 {siteConfig.brandName} • Founded by {siteConfig.founderName}
+          </p>
+          <a
+            href={siteConfig.developerGithubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#FAF6F0]/70 transition-colors hover:text-[#B58938]"
+          >
+            Crafted by {siteConfig.developerName}
+          </a>
         </div>
       </div>
     </footer>
