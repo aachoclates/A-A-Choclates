@@ -1,7 +1,7 @@
 import React from "react";
 import { ExternalLink, Star } from "lucide-react";
 import { siteConfig } from "../config/siteConfig";
-import { GOOGLE_REVIEWS } from "../data/catalogData";
+import { GOOGLE_RATING_ONLY_REVIEWS, GOOGLE_REVIEWS } from "../data/catalogData";
 import { GoogleIcon } from "./SocialIcons";
 
 export const GoogleReviewsSection: React.FC = () => {
@@ -36,13 +36,13 @@ export const GoogleReviewsSection: React.FC = () => {
             <span className="text-sm font-semibold text-[#2A1812]">5.0</span>
             <span className="h-4 w-px bg-[#B58938]/30" aria-hidden="true" />
             <span className="text-sm font-light text-[#644E46]">
-              {siteConfig.brandName}, Bhopal
+              5 Google Reviews
             </span>
           </div>
         </div>
 
         {/* Review cards */}
-        <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {GOOGLE_REVIEWS.map((review) => (
             <article
               key={review.id}
@@ -77,6 +77,29 @@ export const GoogleReviewsSection: React.FC = () => {
                 </span>
               </div>
             </article>
+          ))}
+        </div>
+
+        {/* Rating-only verified Google reviewers */}
+        <div className="mt-6 flex flex-col items-center justify-center gap-3 rounded-2xl border border-[#B58938]/20 bg-[#F2EAE0] px-6 py-5 sm:flex-row sm:gap-10">
+          {GOOGLE_RATING_ONLY_REVIEWS.map((reviewer) => (
+            <div
+              key={reviewer.author}
+              className="flex items-center gap-2.5 text-center"
+            >
+              <span
+                className="text-sm tracking-[0.15em] text-[#B58938]"
+                aria-label="5 out of 5 stars"
+              >
+                ★★★★★
+              </span>
+              <span className="text-sm font-medium text-[#2A1812]">
+                {reviewer.author}
+              </span>
+              <span className="text-xs font-light text-[#644E46]">
+                • 5-Star Rating on Google
+              </span>
+            </div>
           ))}
         </div>
 

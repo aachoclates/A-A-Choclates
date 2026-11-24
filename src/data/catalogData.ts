@@ -451,29 +451,28 @@ export interface GoogleReview {
 
 export const GOOGLE_REVIEWS: GoogleReview[] = [
   {
-    id: "g-ritika",
-    author: "Ritika Sharma",
+    id: "g-farhat",
+    author: "farhat khan",
     rating: 5,
-    text: "Ordered custom name chocolates for my daughter's birthday and they were the highlight of the party. Beautiful gold pearls, fresh roasted nuts, and the team in Bhopal was so easy to work with. Pure class!",
+    text: "Thank you for the cake and make my day very special, taste is very good we enjoyed a lot..we always prefer homemade cake and maffine and in bhopal I think u are the best... All the best",
   },
   {
-    id: "g-aslam",
-    author: "Mohammed Aslam",
+    id: "g-nadeem",
+    author: "Nadeem khan",
     rating: 5,
-    text: "Best Kunafa and walnut dry cakes in Bhopal, hands down. Baked fresh, not overly sweet, and the portions are generous. My family keeps asking me to order again.",
+    text: "Best and hygiene testy cakes..she have magic in her hand we loved it you can expect the best",
   },
   {
-    id: "g-priya",
-    author: "Priya Verma",
+    id: "g-taslim",
+    author: "Taslim Khan",
     rating: 5,
-    text: "The floral mendiant discs genuinely look like little art pieces. Slow-roasted almonds, cashews and real rose petals on pure cocoa. Gifting these to everyone this festive season.",
+    text: "Wow ! Delicious chocolates",
   },
-  {
-    id: "g-sandeep",
-    author: "Sandeep Yadav",
-    rating: 5,
-    text: "Booked a corporate hamper batch for our Diwali gifting and the quality was top notch. Clean ingredients, premium packaging, and reliable delivery across MP. Highly recommended.",
-  },
+];
+
+export const GOOGLE_RATING_ONLY_REVIEWS: Array<{ author: string }> = [
+  { author: "ATEEF ALI" },
+  { author: "Asjad Khan" },
 ];
 
 export const QUOTE_SELECTION_OPTIONS: string[] = [
